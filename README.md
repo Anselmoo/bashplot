@@ -1,2 +1,2 @@
 # bashplot
-Instant data plotting from terminal into the terminal
+Instant data plotting from the terminal into the terminal
