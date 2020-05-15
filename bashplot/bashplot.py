@@ -39,49 +39,56 @@ def load_data(fname, args):
     return data
 
 
-def _plot(fig, x, Y):
+def _plot(fig, x, Y, label):
     if Y.shape[1] == 1:
-        fig.plot(x, Y[:, 0])
+        fig.plot(x, Y[:, 0], label=label)
         return fig
     else:
-        fig.plot(x, Y[:, 0])
-        return _plot(fig, x, Y[:, 1:])
+        fig.plot(x, Y[:, 0], label=label)
+        return _plot(fig, x, Y[:, 1:], label=label)
 
 
-def plot(data, args):
+def plot(data, args, label):
 
     fig = plt.Figure()
     fig.widht = args["size"][0]
     fig.height = args["size"][1]
+    try:
 
-    if args["x_limits"]:
-        fig.set_x_limits(min_=args["x_limits"][0], max_=args["x_limits"][1])
-    else:
-        fig.set_x_limits(min_=np.min(data[:, 0]), max_=np.max(data[:, 0]))
+        if args["x_limits"]:
+            fig.set_x_limits(min_=args["x_limits"][0], max_=args["x_limits"][1])
+        else:
+            fig.set_x_limits(min_=np.min(data[:, 0]), max_=np.max(data[:, 0]))
 
-    if args["y_limits"]:
-        fig.set_y_limits(min_=args["y_limits"][0], max_=args["y_limits"][1])
-    else:
-        fig.set_y_limits(min_=np.min(data[:, 1]), max_=np.max(data[:, 1]))
+        if args["y_limits"]:
+            fig.set_y_limits(min_=args["y_limits"][0], max_=args["y_limits"][1])
+        else:
+            fig.set_y_limits(min_=np.min(data[:, 1]), max_=np.max(data[:, 1]))
 
-    if args["color"]:
-        fig.color_mode = "rgb"
+        if args["color"]:
+            fig.color_mode = "rgb"
 
-    x = data[:, 0]
-    y = data[:, 1:]
+        x = data[:, 0]
+        y = data[:, 1:]
 
-    fig = _plot(fig, x=x, Y=y)
-    print(fig.show(legend=False))
+        fig = _plot(fig, x=x, Y=y, label=label)
+        if args["legend"]:
+            print(fig.show(legend=True))
+        else:
+           print(fig.show(legend=False)) 
+    except IndexError:
+        log(f"corrupted data in {label}", mode=1)
+        sys.exit(1)
 
 
 def bashplot(fnames, args):
 
     if len(fnames) == 1:
-        data = load_data(fname=fnames[0], args=args)
-        plot(data, args)
+        data = load_data(fname=Path(fnames[0]), args=args)
+        plot(data, args, label=fnames[0])
     else:
-        data = load_data(fname=fnames[0], args=args)
-        plot(data, args)
+        data = load_data(fname=Path(fnames[0]), args=args)
+        plot(data, args, label=fnames[0])
         return bashplot(fnames[1:], args)
 
 
@@ -180,7 +187,10 @@ def get_parser():
         type=float,
     )
     parser.add_argument(
-        "-c", "--color", help=("enable RGB colorized plots"), action="store_true"
+        "-c", "--color", help=("enable RGB colorized the plots"), action="store_true"
+    )
+    parser.add_argument(
+        "-l", "--legend", help=("enable the legend of the plots"), action="store_false"
     )
     parser.add_argument(
         "-v",
