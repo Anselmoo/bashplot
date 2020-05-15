@@ -47,6 +47,13 @@ def _plot(fig, x, Y, label):
         fig.plot(x, Y[:, 0], label=label)
         return _plot(fig, x, Y[:, 1:], label=label)
 
+def _scatter(fig, x, Y, label):
+    if Y.shape[1] == 1:
+        fig.scatter(x, Y[:, 0], label=label)
+        return fig
+    else:
+        fig.scatter(x, Y[:, 0], label=label)
+        return _plot(fig, x, Y[:, 1:], label=label)
 
 def plot(data, args, label):
 
@@ -71,7 +78,12 @@ def plot(data, args, label):
         x = data[:, 0]
         y = data[:, 1:]
 
-        fig = _plot(fig, x=x, Y=y, label=label)
+        if args["scatter"]:
+            fig = _scatter(fig, x=x, Y=y, label=label)
+        
+        else:
+            fig = _plot(fig, x=x, Y=y, label=label)
+
         if args["legend"]:
             print(fig.show(legend=True))
         else:
@@ -185,6 +197,9 @@ def get_parser():
         default=None,
         nargs=2,
         type=float,
+    )
+    parser.add_argument(
+        "-sc", "--scatter", help=("replaced regular plot by scatter plot"), action="store_true"
     )
     parser.add_argument(
         "-c", "--color", help=("enable RGB colorized the plots"), action="store_true"
