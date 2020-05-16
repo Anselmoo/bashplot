@@ -1,0 +1,14 @@
+include Pipfile
+include Pipfile.lock
+include requirements.txt
+include LICENSE
+include MANIFEST.in
+include README.md
+include TODO.md
+include CHANGES.md
+
+recursive-include test *py
+include test/*txt
+
+
+
