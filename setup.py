@@ -20,8 +20,8 @@ def long_description():
         "CHANGES\n"
         "-------\n"
         "{changes}\n"
-        "todo\n"
-        "-------\n"
+        "TODO\n"
+        "----\n"
         "{todo}\n"
     )
     return long_description

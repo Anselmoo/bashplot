@@ -1,3 +1,4 @@
+"""Bashplot: Instant data plotting from the terminal into the terminal."""
 #!/usr/bin/env python3
 import argparse
 import os
@@ -17,34 +18,37 @@ if sys.version < "3":
     sys.exit(1)
 
 
-def log(arg, mode=None):
-    """log.
+def log(msg, mode=None):
+    """Print messages to display.
 
     Parameters
     ----------
-    arg :
-        arg
-    mode :
-        mode
+    msg : str
+        Message to print to the terminal.
+    mode : int, optional
+        If mode is activated, message becomes an error message.
     """
-
     if mode:
-        print(f"[ERROR] {arg}")
+        print(f"[ERROR] {msg}")
     else:
-        print(arg)
+        print(msg)
 
 
 def load_data(fname, args):
-    """load_data.
+    """Load data via np.genfromtxt.
 
     Parameters
     ----------
-    fname :
-        fname
-    args :
-        args
-    """
+    fname : str
+        Filename to load via np.genfromtxt.
+    args : dict
+        Dictonary of the keywords and values from the parser.
 
+    Returns
+    -------
+    data : float-array
+        Returns a 2D-Numpy-array with `dtype=float`.
+    """
     data = np.genfromtxt(
         fname,
         dtype=np.float,
@@ -58,18 +62,20 @@ def load_data(fname, args):
 
 
 def _plot(fig, x, Y, label):
-    """_plot.
+    """Make the plot-figures.
+
+    _plot() is generating a single- or multi-plot by recursiving calling plot().
 
     Parameters
     ----------
-    fig :
-        fig
-    x :
-        x
-    Y :
-        Y
-    label :
-        label
+    fig : class
+        Figure class for the terminal plot
+    x : float-array
+        1D-Numpy-array with the float column x-values.
+    Y : float-array
+        1D- or 2D-Numpy-array with the float column Y-values.
+    label : str
+        The label of the plot(s) is the current filename.
     """
     if Y.shape[1] == 1:
         fig.plot(x, Y[:, 0], label=label)
@@ -80,18 +86,20 @@ def _plot(fig, x, Y, label):
 
 
 def _scatter(fig, x, Y, label):
-    """_scatter.
+    """Make the scatter-figures.
+
+    _scatter() is generating a single- or multi-plot by recursiving calling scatter().
 
     Parameters
     ----------
-    fig :
-        fig
-    x :
-        x
-    Y :
-        Y
-    label :
-        label
+    fig : class
+        Figure class for the terminal plot
+    x : float-array
+        1D-Numpy-array with the float column x-values.
+    Y : float-array
+        1D- or 2D-Numpy-array with the float column Y-values.
+    label : str
+        The label of the scatter-plot(s) is the current filename.
     """
     if Y.shape[1] == 1:
         fig.scatter(x, Y[:, 0], label=label)
@@ -102,18 +110,19 @@ def _scatter(fig, x, Y, label):
 
 
 def plot(data, args, label):
-    """plot.
+    """Generate the plots as classical or scatter plots.
+
+    plot() is generating the the classical or scatter plots according to the arguments `args`.
 
     Parameters
     ----------
-    data :
-        data
-    args :
-        args
-    label :
-        label
+    data : float-array
+        2D-Numpy-array with `dtype=float`.
+    args : dict
+        Dictonary of the keywords and values from the parser.
+    label : str
+        The label of the scatter-plot(s) is the current filename.
     """
-
     fig = plt.Figure()
     fig.widht = args["size"][0]
     fig.height = args["size"][1]
@@ -154,12 +163,11 @@ def bashplot(fnames, args):
 
     Parameters
     ----------
-    fnames :
-        fnames
-    args :
-        args
+    fnames : str-list
+        List of the filename(s); is always a list even if single value included.
+    args : dict
+        Dictonary of the keywords and values from the parser.
     """
-
     if len(fnames) == 1:
         data = load_data(fname=Path(fnames[0]), args=args)
         plot(data, args, label=fnames[0])
@@ -170,8 +178,7 @@ def bashplot(fnames, args):
 
 
 def get_parser():
-    """get_parser.
-    """
+    """Get the parser arguments from the command line."""
     parser = argparse.ArgumentParser(
         description=("Instant data plotting from the terminal into the terminal")
     )
@@ -288,8 +295,7 @@ def get_parser():
 
 
 def command_line_runner():
-    """command_line_runner.
-    """
+    """Run bashplot() via command line."""
     args = get_parser()
 
     if args["version"]:
