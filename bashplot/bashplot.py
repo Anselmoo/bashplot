@@ -1,5 +1,5 @@
+#!/usr/bin/env python
 """Bashplot: Instant data plotting from the terminal into the terminal."""
-#!/usr/bin/env python3
 import argparse
 import os
 from pathlib import Path
@@ -61,10 +61,10 @@ def load_data(fname, args):
     return data
 
 
-def _plot(fig, x, Y, label):
+def plot_plot(fig, x, Y, label):
     """Make the plot-figures.
 
-    _plot() is generating a single- or multi-plot by recursiving calling plot().
+    plot_plot() is generating a single- or multi-plot by recursiving calling plot().
 
     Parameters
     ----------
@@ -76,19 +76,27 @@ def _plot(fig, x, Y, label):
         1D- or 2D-Numpy-array with the float column Y-values.
     label : str
         The label of the plot(s) is the current filename.
+    
+    Returns
+    -------
+    fig :  class
+        Updated figure class for the terminal plot 
+    plot_plot() : function
+        Returns the function itself for a smaller (n-1) float-array (Y) until it is an
+        1D-array.
     """
     if Y.shape[1] == 1:
         fig.plot(x, Y[:, 0], label=label)
         return fig
     else:
         fig.plot(x, Y[:, 0], label=label)
-        return _plot(fig, x, Y[:, 1:], label=label)
+        return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
-def _scatter(fig, x, Y, label):
+def plot_scatter(fig, x, Y, label):
     """Make the scatter-figures.
 
-    _scatter() is generating a single- or multi-plot by recursiving calling scatter().
+    plot_scatter() is generating a single- or multi-plot by recursiving calling scatter().
 
     Parameters
     ----------
@@ -100,13 +108,21 @@ def _scatter(fig, x, Y, label):
         1D- or 2D-Numpy-array with the float column Y-values.
     label : str
         The label of the scatter-plot(s) is the current filename.
+    
+    Returns
+    -------
+    fig :  class
+        Updated figure class for the terminal plot 
+    plot_scatter() : function
+        Returns the function itself for a smaller (n-1) float-array (Y) until it is an
+        1D-array.
     """
     if Y.shape[1] == 1:
         fig.scatter(x, Y[:, 0], label=label)
         return fig
     else:
         fig.scatter(x, Y[:, 0], label=label)
-        return _plot(fig, x, Y[:, 1:], label=label)
+        return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
 def plot(data, args, label):
@@ -145,9 +161,9 @@ def plot(data, args, label):
         y = data[:, 1:]
 
         if args["scatter"]:
-            fig = _scatter(fig, x=x, Y=y, label=label)
+            fig = plot_scatter(fig, x=x, Y=y, label=label)
         else:
-            fig = _plot(fig, x=x, Y=y, label=label)
+            fig = plot_plot(fig, x=x, Y=y, label=label)
 
         if args["legend"]:
             log(fig.show(legend=True))
@@ -160,13 +176,22 @@ def plot(data, args, label):
 
 def bashplot(fnames, args):
     """bashplot.
-
+    
+    bashplot() is plotting each file independtly according to the args. For a
+    filename list >1, bashplot() is calling itself again by reducing the list by
+    the value of -1.
+    
     Parameters
     ----------
     fnames : str-list
         List of the filename(s); is always a list even if single value included.
     args : dict
         Dictonary of the keywords and values from the parser.
+
+    Returns
+    -------
+    bashplot() : function
+        Returns the function itself for smaller (n-1) list of filenames (fnames).
     """
     if len(fnames) == 1:
         data = load_data(fname=Path(fnames[0]), args=args)
@@ -177,8 +202,19 @@ def bashplot(fnames, args):
         return bashplot(fnames[1:], args)
 
 
-def get_parser():
-    """Get the parser arguments from the command line."""
+def get_args(opt=None):
+    """Get the parser arguments from the command line.
+    
+    Parameters
+    ----------
+    opt : dict, optional
+        Optional dictonary for modifying the parser atguments; default is None.
+    
+    Returns
+    -------
+    args : dict
+        Dictonary of the keywords and values from the parser.
+    """
     parser = argparse.ArgumentParser(
         description=("Instant data plotting from the terminal into the terminal")
     )
@@ -186,7 +222,6 @@ def get_parser():
     parser.add_argument(
         "infile", nargs="*", type=str, help="load data file(s) as ASCII"
     )
-    parser.add_argument("-p", "--pos", help="plot", default=1, type=int)
 
     parser.add_argument(
         "-cm",
@@ -291,12 +326,15 @@ def get_parser():
         action="store_true",
     )
     args = vars(parser.parse_args())
+    if opt:
+        for item, value in opt.items():
+            args[item] = value
     return args
 
 
 def command_line_runner():
     """Run bashplot() via command line."""
-    args = get_parser()
+    args = get_args()
 
     if args["version"]:
         log(__version__)

@@ -8,6 +8,9 @@ verify_ssl = true
 [packages]
 plotille = "*"
 numpy = "*"
+pytest = "*"
+pytest-cov = "*"
+coverage = "*"
 
 [requires]
 python_version = "3.7"
