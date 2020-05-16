@@ -1,0 +1,32 @@
+language: python
+cache: pip
+matrix:
+  include:
+    - python: "3.4"
+    - python: "3.5"
+    - python: "3.6"
+    - python: "3.7"
+    - python: "3.8"
+      dist: xenial
+      sudo: required
+
+# command to install dependencies
+install: "pip install -r requirements.txt"
+
+before_script:
+  - pip install flake8
+  - pip install blake
+  # stop the build if there are Python syntax errors or undefined names
+  - flake8 bashplot/ --count --max-line-length=88 --ignore=W293,W291 --statistic
+  # stop the build if there are Python syntax follows not the black style
+  - blake bashplot/ --check -v
+  # exit-zero treats all errors as warnings.
+  - flake8 . --count --exit-zero --max-complexity=10 --statistics
+# install:
+  - python setup.py install
+  - pip install coverage
+# command to run tests
+script:
+  - coverage run -m unittest test_bashplot.py
+  - coverage run -m pytest
+  - coverage report
