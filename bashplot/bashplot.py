@@ -18,6 +18,15 @@ if sys.version < "3":
 
 
 def log(arg, mode=None):
+    """log.
+
+    Parameters
+    ----------
+    arg :
+        arg
+    mode :
+        mode
+    """
 
     if mode:
         print(f"[ERROR] {arg}")
@@ -26,6 +35,15 @@ def log(arg, mode=None):
 
 
 def load_data(fname, args):
+    """load_data.
+
+    Parameters
+    ----------
+    fname :
+        fname
+    args :
+        args
+    """
 
     data = np.genfromtxt(
         fname,
@@ -40,14 +58,41 @@ def load_data(fname, args):
 
 
 def _plot(fig, x, Y, label):
+    """_plot.
+
+    Parameters
+    ----------
+    fig :
+        fig
+    x :
+        x
+    Y :
+        Y
+    label :
+        label
+    """
     if Y.shape[1] == 1:
         fig.plot(x, Y[:, 0], label=label)
         return fig
     else:
         fig.plot(x, Y[:, 0], label=label)
         return _plot(fig, x, Y[:, 1:], label=label)
+
 
 def _scatter(fig, x, Y, label):
+    """_scatter.
+
+    Parameters
+    ----------
+    fig :
+        fig
+    x :
+        x
+    Y :
+        Y
+    label :
+        label
+    """
     if Y.shape[1] == 1:
         fig.scatter(x, Y[:, 0], label=label)
         return fig
@@ -55,7 +100,19 @@ def _scatter(fig, x, Y, label):
         fig.scatter(x, Y[:, 0], label=label)
         return _plot(fig, x, Y[:, 1:], label=label)
 
+
 def plot(data, args, label):
+    """plot.
+
+    Parameters
+    ----------
+    data :
+        data
+    args :
+        args
+    label :
+        label
+    """
 
     fig = plt.Figure()
     fig.widht = args["size"][0]
@@ -80,20 +137,28 @@ def plot(data, args, label):
 
         if args["scatter"]:
             fig = _scatter(fig, x=x, Y=y, label=label)
-        
         else:
             fig = _plot(fig, x=x, Y=y, label=label)
 
         if args["legend"]:
-            print(fig.show(legend=True))
+            log(fig.show(legend=True))
         else:
-           print(fig.show(legend=False)) 
+            log(fig.show(legend=False))
     except IndexError:
         log(f"corrupted data in {label}", mode=1)
         sys.exit(1)
 
 
 def bashplot(fnames, args):
+    """bashplot.
+
+    Parameters
+    ----------
+    fnames :
+        fnames
+    args :
+        args
+    """
 
     if len(fnames) == 1:
         data = load_data(fname=Path(fnames[0]), args=args)
@@ -105,6 +170,8 @@ def bashplot(fnames, args):
 
 
 def get_parser():
+    """get_parser.
+    """
     parser = argparse.ArgumentParser(
         description=("Instant data plotting from the terminal into the terminal")
     )
@@ -199,7 +266,10 @@ def get_parser():
         type=float,
     )
     parser.add_argument(
-        "-sc", "--scatter", help=("replaced regular plot by scatter plot"), action="store_true"
+        "-sc",
+        "--scatter",
+        help=("replaced regular plot by scatter plot"),
+        action="store_true",
     )
     parser.add_argument(
         "-c", "--color", help=("enable RGB colorized the plots"), action="store_true"
@@ -218,6 +288,8 @@ def get_parser():
 
 
 def command_line_runner():
+    """command_line_runner.
+    """
     args = get_parser()
 
     if args["version"]:
