@@ -22,11 +22,12 @@ before_script:
   - blake bashplot/ --check -v
   # exit-zero treats all errors as warnings.
   - flake8 . --count --exit-zero --max-complexity=10 --statistics
-# install:
+  # install bashplot and coverage:
   - python setup.py install
   - pip install coverage
+  # change directory
+  - cd test
 # command to run tests
 script:
   - coverage run -m unittest test_bashplot.py
-  - coverage run -m pytest
   - coverage report
