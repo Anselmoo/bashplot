@@ -1,2 +1,2 @@
-numpy==1.18.4
-plotille==3.7
+numpy>=1.18
+plotille>=3.7

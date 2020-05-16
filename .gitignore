@@ -5,4 +5,4 @@ bashplot.egg-info/
 .DS_Store
 bashplot/test*
 bashplot/log.out
-bashplot/__pycache__
+__pycache__
