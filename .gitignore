@@ -1,3 +1,8 @@
+html/
+build/
+dist/
+bashplot.egg-info/
 .DS_Store
 bashplot/test*
 bashplot/log.out
+bashplot/__pycache__
