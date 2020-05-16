@@ -27,6 +27,7 @@ before_script:
   - pip install coverage
   # change directory
   - cd test
+
 # command to run tests
 script:
   - coverage run -m unittest test_bashplot.py
