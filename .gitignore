@@ -3,6 +3,4 @@ build/
 dist/
 bashplot.egg-info/
 .DS_Store
-bashplot/test*
-bashplot/log.out
 __pycache__
