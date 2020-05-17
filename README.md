@@ -50,7 +50,7 @@ python setup.py install
 ---
 1. Python3
 2. numpy
-3. plotille
+3. (plotille)[https://github.com/tammoippen/plotille]
 
 ## Usage
 ---
@@ -242,9 +242,9 @@ bashplot.bashplot(fnames, args)
 ## Author
 ---
 
-* [Anselm Hahn][https://github.com/Anselmoo]
+* [Anselm Hahn](https://github.com/Anselmoo)
 
 
 ## License
 --- 
-The source code of `bashplot` is licensed under the [MIT license][https://github.com/Anselmoo/bashplot/blob/master/LICENSE].
+The source code of `bashplot` is licensed under the [MIT license](https://github.com/Anselmoo/bashplot/blob/master/LICENSE).
