@@ -5,3 +5,10 @@ bashplot.egg-info/
 .DS_Store
 .coverage
 __pycache__
+test/.coverage
+.coverage
+test/@test_13302_tmp
+.coverage
+test/@test_13429_tmp
+test/.coverage
+.coverage
