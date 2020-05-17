@@ -1,4 +1,4 @@
-[![Travis (.org)](https://img.shields.io/travis/Anselmoo/bashplot?logo=travis)]((https://travis-ci.com/Anselmoo/bashplot)
+[![Travis (.org)](https://img.shields.io/travis/Anselmoo/bashplot?logo=travis)](https://travis-ci.com/Anselmoo/bashplot)
 [![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi)](https://pypi.org/project/bashplot/)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
