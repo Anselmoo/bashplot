@@ -36,4 +36,5 @@ script:
   - coverage run -m unittest test_bashplot.py
   # Generate test coverage report and upload to codecov.io
   - coverage report -m
+after_success:
   - codecov
