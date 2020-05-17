@@ -20,7 +20,7 @@ before_script:
   # stop the build if there are Python syntax errors or undefined names.
   - flake8 bashplot/ --count --max-line-length=88 --ignore=W293,W291 --statistic
   # stop the build if there are Python syntax follows not the black style.
-  - blake bashplot/ --check -v
+  - black bashplot/ --check -v
   # exit-zero treats all errors as warnings.
   - flake8 . --count --exit-zero --max-complexity=10 --statistics
   # stop if doc-string is broken in bashplot.
