@@ -40,6 +40,7 @@ setup(
     maintainer=__author__,
     maintainer_email=__email__,
     url="https://github.com/Anselmoo/bashplot",
+    license='MIT',
     entry_points={
         "console_scripts": ["bashplot = bashplot.bashplot:command_line_runner"]
     },
@@ -48,9 +49,6 @@ setup(
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
