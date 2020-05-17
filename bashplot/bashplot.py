@@ -356,7 +356,7 @@ def command_line_runner():
     if not args["infile"]:
         log("Missing input file(s)!", mode=1)
         return
-    
+
     fnames = args["infile"]
     bashplot(fnames, args)
 
