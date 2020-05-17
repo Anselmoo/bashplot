@@ -2,7 +2,7 @@
 [![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi)](https://pypi.org/project/bashplot/)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
-![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)
+[![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)](https://github.com/Anselmoo/bashplot/blob/master/LICENSE)
 # bashplot
 ## Instant data plotting from the terminal into the terminal
 ---
