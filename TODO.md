@@ -1,2 +1,5 @@
-- [ ] Reading binary files
-- [ ] Plotting histograms
+# Todo
+---
+
+  - [ ] Reading binary files
+  - [ ] Plotting histograms
