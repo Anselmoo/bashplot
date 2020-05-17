@@ -34,7 +34,7 @@ setup(
     long_description=long_description(),
     long_description_content_type="text/markdown",
     install_requires=["numpy>=1.10", "plotille>=3.3",],
-    packages=["bashplot",]
+    packages=["bashplot",],
     author=__author__,
     author_email=__email__,
     maintainer=__author__,
