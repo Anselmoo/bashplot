@@ -236,6 +236,7 @@ optional arguments:
 
 ```python3
 from bashplot import bashplot
+
 fnames = ["test.txt"]
 args = {
             "infile": fnames,
