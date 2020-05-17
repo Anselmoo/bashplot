@@ -39,6 +39,7 @@ setup(
     author_email=__email__,
     maintainer=__author__,
     maintainer_email=__email__,
+    url="https://github.com/Anselmoo/bashplot",
     entry_points={
         "console_scripts": ["bashplot = bashplot.bashplot:command_line_runner"]
     },
