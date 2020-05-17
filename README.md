@@ -195,9 +195,6 @@ optional arguments:
   -----------|-|---------|---------|---------|---------|---------|---------|---------|---------|-> (X)
              | -0.300000 -0.225000 -0.150000 -0.075000 0         0.0750000 0.1500000 0.2250000 0.3000000
   
-  Legend:
-  -------
-  ⠤⠤ test_data_random_gaussian.txt
   ```
 3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
   ```bash
