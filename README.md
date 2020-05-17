@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/Anselmoo/bashplot.svg?branch=master)](https://travis-ci.com/Anselmoo/bashplot)
 ![PyPI](https://img.shields.io/pypi/v/bashplot)
+[![CodeFactor](https://www.codefactor.io/repository/github/anselmoo/bashplot/badge/master)](https://www.codefactor.io/repository/github/anselmoo/bashplot/overview/master)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
 ![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)
 # bashplot
