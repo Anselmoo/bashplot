@@ -32,7 +32,6 @@ steps:
     flake8 bashplot/ --count --max-line-length=88 --ignore=W293,W291 --statistic
     black bashplot/ --check -v
     pydocstyle bashplot/bashplot.py
-    pip install coverage
   displayName: 'Install dependencies'
 
 - script: |
@@ -40,6 +39,10 @@ steps:
   displayName: 'Install bashplot'
 
 - script: |
-    pip install pytest pytest-azurepipelines
-    pytest
+
+    pip install coverage 
+    pipt install pytest-azurepipelines
+    cd test
+    coverage run -m unittest test_bashplot.py
+    coverage report
   displayName: 'pytest'
