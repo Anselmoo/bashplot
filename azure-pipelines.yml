@@ -40,7 +40,7 @@ steps:
 
 - script: |
 
-    pip install coverage 
+    pip install coverage
     pipt install pytest-azurepipelines
     cd test
     coverage run -m unittest test_bashplot.py
