@@ -32,7 +32,6 @@ setup(
     version=bashplot.__version__,
     description="Instant data plotting from the terminal into the terminal",
     long_description=long_description(),
-    # long_description=open(Path("./README.md")).read(),
     long_description_content_type="text/markdown",
     install_requires=["numpy>=1.18", "plotille>=3.7",],
     packages=["bashplot",],

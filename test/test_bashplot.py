@@ -59,7 +59,7 @@ class BashplotTestCase(unittest.TestCase):
             "y_limits": [0.0, 3.0],
             "scatter": False,
             "color": True,
-            "legend": False,
+            "legend": True,
             "version": True,
         }
 

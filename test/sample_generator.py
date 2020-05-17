@@ -36,7 +36,7 @@ def generate(fname="test_data"):
     x = np.linspace(-0.3, 0.3)
     y = np.random.normal(mu, sigma, 50)
     data = np.array([x, y]).T
-    np.savetxt(Path(f"./{fname}_gaussian.txt"), data)
+    np.savetxt(Path(f"./{fname}__random_gaussian.txt"), data)
 
 
 if __name__ == "__main__":

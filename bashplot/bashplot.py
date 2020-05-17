@@ -41,7 +41,7 @@ def load_data(fname, args):
     fname : str
         Filename to load via np.genfromtxt.
     args : dict
-        Dictonary of the keywords and values from the parser.
+        Dictionary of the keywords and values from the parser.
 
     Returns
     -------
@@ -128,7 +128,7 @@ def plot_scatter(fig, x, Y, label):
 def plot(data, args, label):
     """Generate the plots as classical or scatter plots.
 
-    plot() is generating the the classical or scatter plots according to the arguments 
+    plot() is generating the classical or scatter plots according to the arguments 
     `args`.
 
     Parameters
@@ -136,7 +136,7 @@ def plot(data, args, label):
     data : float-array
         2D-Numpy-array with `dtype=float`.
     args : dict
-        Dictonary of the keywords and values from the parser.
+        Dictionary of the keywords and values from the parser.
     label : str
         The label of the scatter-plot(s) is the current filename.
     """
@@ -178,7 +178,7 @@ def plot(data, args, label):
 def bashplot(fnames, args):
     """bashplot.
     
-    bashplot() is plotting each file independtly according to the args. For a
+    bashplot() is plotting each file independently according to the args. For a
     filename list >1, bashplot() is calling itself again by reducing the list by
     the value of -1.
     
@@ -187,7 +187,7 @@ def bashplot(fnames, args):
     fnames : str-list
         List of the filename(s); is always a list even if single value included.
     args : dict
-        Dictonary of the keywords and values from the parser.
+        Dictionary of the keywords and values from the parser.
 
     Returns
     -------
@@ -209,12 +209,12 @@ def get_args(opt=None):
     Parameters
     ----------
     opt : dict, optional
-        Optional dictonary for modifying the parser atguments; default is None.
+        Optional Dictionary for modifying the parser arguments; default is None.
     
     Returns
     -------
     args : dict
-        Dictonary of the keywords and values from the parser.
+        Dictionary of the keywords and values from the parser.
     """
     parser = argparse.ArgumentParser(
         description=("Instant data plotting from the terminal into the terminal")
