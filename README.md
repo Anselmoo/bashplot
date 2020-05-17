@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/Anselmoo/bashplot.svg?branch=master?label=Travis%20CI&logo=travis)](https://travis-ci.com/Anselmoo/bashplot)
-![PyPI](https://img.shields.io/pypi/v/bashplot)
+![Travis (.org)](https://img.shields.io/travis/Anselmoo/bashplot?logo=travis)
+![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi)
 [![CodeFactor](https://www.codefactor.io/repository/github/anselmoo/bashplot/badge/master)](https://www.codefactor.io/repository/github/anselmoo/bashplot/overview/master)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
 ![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)
