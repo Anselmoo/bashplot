@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """Bashplot: Instant data plotting from the terminal into the terminal."""
 import argparse
-import os
 from pathlib import Path
 import sys
 
@@ -96,7 +95,8 @@ def plot_plot(fig, x, Y, label):
 def plot_scatter(fig, x, Y, label):
     """Make the scatter-figures.
 
-    plot_scatter() is generating a single- or multi-plot by recursiving calling scatter().
+    plot_scatter() is generating a single- or multi-plot by recursiving calling
+    scatter().
 
     Parameters
     ----------
@@ -128,7 +128,8 @@ def plot_scatter(fig, x, Y, label):
 def plot(data, args, label):
     """Generate the plots as classical or scatter plots.
 
-    plot() is generating the the classical or scatter plots according to the arguments `args`.
+    plot() is generating the the classical or scatter plots according to the arguments 
+    `args`.
 
     Parameters
     ----------
@@ -227,7 +228,8 @@ def get_args(opt=None):
         "-cm",
         "--comments",
         help=(
-            "define the character to indicate the start of the document; default is None"
+            "define the character to indicate the start of the document; "
+            "default is None"
         ),
         default=None,
         type=str,
@@ -235,7 +237,9 @@ def get_args(opt=None):
     parser.add_argument(
         "-d",
         "--delimiter",
-        help=("define the type of deilimiter; default is any consecutive 'whitespace'"),
+        help=(
+            "define the type of deilimiter; default is any consecutive " "'whitespace'"
+        ),
         default=None,
         type=str,
     )
@@ -287,9 +291,9 @@ def get_args(opt=None):
         "-x",
         "--x_limits",
         help=(
-            "define the mimimum and maximum x-range of the plot; default is the automatic "
-            "generated minimum and the maximum of the data, but can be replaced by any "
-            "float-values."
+            "define the mimimum and maximum x-range of the plot; default is the "
+            "automatic generated minimum and the maximum of the data, but can be "
+            "replaced by any float-values."
         ),
         default=None,
         nargs=2,
@@ -299,9 +303,9 @@ def get_args(opt=None):
         "-y",
         "--y_limits",
         help=(
-            "define the mimimum and maximum y-range of the plot; default is the automatic "
-            "generated minimum and the maximum of the data, but can be replaced by any "
-            "float-values."
+            "define the mimimum and maximum y-range of the plot; default is the "
+            "automatic generated minimum and the maximum of the data, but can be "
+            "replaced by any float-values."
         ),
         default=None,
         nargs=2,
