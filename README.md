@@ -49,8 +49,8 @@ python setup.py install
 ## Requirments
 ---
 1. Python3
-2. numpy
-3. (plotille)[https://github.com/tammoippen/plotille]
+2. [numpy](https://github.com/numpy/numpy)
+3. [plotille](https://github.com/tammoippen/plotille)
 
 ## Usage
 ---
