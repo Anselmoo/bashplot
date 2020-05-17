@@ -53,12 +53,14 @@ python setup.py install
 ```
 ## Requirments
 ---
+
  1. Python3
  2. [numpy](https://github.com/numpy/numpy)
  3. [plotille](https://github.com/tammoippen/plotille)
 
 ## Usage
 ---
+
 ```unix
 ╰─ bashplot -h
 usage: bashplot [-h] [-cm COMMENTS] [-d DELIMITER] [-skh SKIP_HEADER]
@@ -270,10 +272,12 @@ bashplot.bashplot(fnames, args)
 
 ## Contributions
 ---
+
 I'm happy to accept how to improve batchplot; please forward your [issues](https://github.com/Anselmoo/bashplot/issues) or [pull requests](https://github.com/Anselmoo/bashplot/pulls).
 
 Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), and [pydocstyle](https://github.com/PyCQA/pydocstyle).
 
 ## License
---- 
+---
+
 The source code of `bashplot` is licensed under the [MIT license](https://github.com/Anselmoo/bashplot/blob/master/LICENSE).
