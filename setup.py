@@ -40,7 +40,7 @@ setup(
     maintainer=__author__,
     maintainer_email=__email__,
     entry_points={
-        "console_scripts": ["bashplot = bashplot.bashplot.command_line_runner"]
+        "console_scripts": ["bashplot = bashplot.bashplot:command_line_runner"]
     },
     classifiers=[
         "Development Status :: 5 - Production/Stable",
