@@ -1,0 +1,2 @@
+- [ ] Reading binary files
+- [ ] Plotting histograms
