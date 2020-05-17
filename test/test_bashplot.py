@@ -37,7 +37,7 @@ class BashplotTestCase(unittest.TestCase):
             "skip_header": 2,
             "skip_footer": 2,
             "usecols": (0, 1),
-            "size": [60,40],
+            "size": [60, 40],
             "x_limits": [0.0, 3.0],
             "y_limits": [0.0, 3.0],
             "scatter": True,

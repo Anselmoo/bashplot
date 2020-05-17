@@ -233,7 +233,6 @@ def get_args(opt=None):
     parser.add_argument(
         "infile", nargs="*", type=str, help="load data file(s) as ASCII"
     )
-
     parser.add_argument(
         "-cm",
         "--comments",
@@ -247,9 +246,7 @@ def get_args(opt=None):
     parser.add_argument(
         "-d",
         "--delimiter",
-        help=(
-            "define the type of deilimiter; default is any consecutive " "'whitespace'"
-        ),
+        help=("define the type of deilimiter; default is any consecutive 'whitespace'"),
         default=None,
         type=str,
     )
@@ -356,7 +353,7 @@ def command_line_runner():
     if not args["infile"]:
         log("Missing input file(s)!", mode=1)
         return
-    
+
     fnames = args["infile"]
     bashplot(fnames, args)
 

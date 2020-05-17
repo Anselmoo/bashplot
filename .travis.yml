@@ -23,13 +23,23 @@ before_script:
   - flake8 . --count --exit-zero --max-complexity=10 --statistics
   # stop if doc-string is broken in bashplot.
   - pydocstyle bashplot/bashplot.py
-  # install bashplot and coverage:
+  # install bashplot
   - python setup.py install
+  # isntall coverage and codecov for report
   - pip install coverage
+  - pip install codecov
   # change directory.
   - cd test
 
 # command to run tests
 script:
   - coverage run -m unittest test_bashplot.py
-  - coverage report
+  # Generate test coverage report and upload to codecov.io
+  - coverage report -m
+after_success:
+  - codecov
+
+notifications:
+  slack:
+    on_success: change
+    on_failure: always

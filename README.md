@@ -1,8 +1,10 @@
-[![Build Status](https://travis-ci.com/Anselmoo/bashplot.svg?branch=master)](https://travis-ci.com/Anselmoo/bashplot)
-![PyPI](https://img.shields.io/pypi/v/bashplot)
-[![CodeFactor](https://www.codefactor.io/repository/github/anselmoo/bashplot/badge/master)](https://www.codefactor.io/repository/github/anselmoo/bashplot/overview/master)
+
+[![Travis (.com) branch](https://img.shields.io/travis/com/Anselmoo/bashplot/master?logo=travis)](https://travis-ci.com/Anselmoo/bashplot)
+[![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi)](https://pypi.org/project/bashplot/)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
+[![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
-![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)
+[![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)](https://github.com/Anselmoo/bashplot/blob/master/LICENSE)
 # bashplot
 ## Instant data plotting from the terminal into the terminal
 ---
@@ -47,18 +49,20 @@ or
 
 or 
 
-```
+```bash
 pip install -r requirements.txt
 python setup.py install
 ```
 ## Requirments
 ---
-1. Python3
-2. [numpy](https://github.com/numpy/numpy)
-3. [plotille](https://github.com/tammoippen/plotille)
+
+ 1. Python3
+ 2. [numpy](https://github.com/numpy/numpy)
+ 3. [plotille](https://github.com/tammoippen/plotille)
 
 ## Usage
 ---
+
 ```unix
 ╰─ bashplot -h
 usage: bashplot [-h] [-cm COMMENTS] [-d DELIMITER] [-skh SKIP_HEADER]
@@ -111,9 +115,10 @@ optional arguments:
   -v, --version         displays the current version of bathchplot
 ```
 
-# Other examples
+## Other examples
+---
 
-1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
+ 1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
   ```bash
      (Y)     ^
   0.99948622 |
@@ -172,7 +177,8 @@ optional arguments:
   -------
   ⠤⠤ test_data_cos.txt
   ```
-2. Plotting single file without legend `bashplot file -l`
+ 
+ 2. Plotting single file without legend `bashplot file -l`
   ```bash
      (Y)     ^
   0.23492250 |
@@ -200,7 +206,8 @@ optional arguments:
              | -0.300000 -0.225000 -0.150000 -0.075000 0         0.0750000 0.1500000 0.2250000 0.3000000
   
   ```
-3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
+
+ 3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
   ```bash
               .   (Y)     ^
             3 |
@@ -263,14 +270,16 @@ bashplot.bashplot(fnames, args)
 ## Author
 ---
 
-* [Anselm Hahn](https://github.com/Anselmoo)
+ * [Anselm Hahn](https://github.com/Anselmoo)
 
 ## Contributions
 ---
+
 I'm happy to accept how to improve batchplot; please forward your [issues](https://github.com/Anselmoo/bashplot/issues) or [pull requests](https://github.com/Anselmoo/bashplot/pulls).
 
 Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), and [pydocstyle](https://github.com/PyCQA/pydocstyle).
 
 ## License
---- 
+---
+
 The source code of `bashplot` is licensed under the [MIT license](https://github.com/Anselmoo/bashplot/blob/master/LICENSE).
