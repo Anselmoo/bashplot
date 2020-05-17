@@ -236,6 +236,23 @@ optional arguments:
 
 ```python3
 from bashplot import bashplot
+fnames = ["test.txt"]
+args = {
+            "infile": fnames,
+            "comments": None,
+            "delimiter": None,
+            "skip_header": 0,
+            "skip_footer": 0,
+            "usecols": None,
+            "size": [60, 40],
+            "x_limits": None,
+            "y_limits": None,
+            "scatter": True,
+            "color": True,
+            "legend": False,
+            "version": False,
+        }
+        
 bashplot.bashplot(fnames, args)
 ```
 
