@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/Anselmoo/bashplot.svg?branch=master)](https://travis-ci.com/Anselmoo/bashplot)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
 # bashplot
 ## Instant data plotting from the terminal into the terminal
