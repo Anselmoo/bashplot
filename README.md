@@ -47,15 +47,15 @@ or
 
 or 
 
-```
+```bash
 pip install -r requirements.txt
 python setup.py install
 ```
 ## Requirments
 ---
-1. Python3
-2. [numpy](https://github.com/numpy/numpy)
-3. [plotille](https://github.com/tammoippen/plotille)
+ 1. Python3
+ 2. [numpy](https://github.com/numpy/numpy)
+ 3. [plotille](https://github.com/tammoippen/plotille)
 
 ## Usage
 ---
@@ -111,9 +111,10 @@ optional arguments:
   -v, --version         displays the current version of bathchplot
 ```
 
-# Other examples
+## Other examples
+---
 
-1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
+ 1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
   ```bash
      (Y)     ^
   0.99948622 |
@@ -172,7 +173,8 @@ optional arguments:
   -------
   ⠤⠤ test_data_cos.txt
   ```
-2. Plotting single file without legend `bashplot file -l`
+ 
+ 2. Plotting single file without legend `bashplot file -l`
   ```bash
      (Y)     ^
   0.23492250 |
@@ -200,7 +202,8 @@ optional arguments:
              | -0.300000 -0.225000 -0.150000 -0.075000 0         0.0750000 0.1500000 0.2250000 0.3000000
   
   ```
-3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
+
+ 3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
   ```bash
               .   (Y)     ^
             3 |
@@ -263,7 +266,7 @@ bashplot.bashplot(fnames, args)
 ## Author
 ---
 
-* [Anselm Hahn](https://github.com/Anselmoo)
+ * [Anselm Hahn](https://github.com/Anselmoo)
 
 ## Contributions
 ---
