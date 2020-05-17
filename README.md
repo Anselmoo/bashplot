@@ -1,3 +1,4 @@
+[![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
 # bashplot
 ## Instant data plotting from the terminal into the terminal
 ---
@@ -262,6 +263,11 @@ bashplot.bashplot(fnames, args)
 
 * [Anselm Hahn](https://github.com/Anselmoo)
 
+## Contributions
+---
+I'm happy to accept how to improve batchplot; please forward your [issues](https://github.com/Anselmoo/bashplot/issues) or [pull requests](https://github.com/Anselmoo/bashplot/pulls).
+
+Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), and [pydocstyle](https://github.com/PyCQA/pydocstyle).
 
 ## License
 --- 
