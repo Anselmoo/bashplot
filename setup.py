@@ -32,7 +32,6 @@ setup(
     version=bashplot.__version__,
     description="Instant data plotting from the terminal into the terminal",
     long_description=long_description(),
-    # long_description=open(Path("./README.md")).read(),
     long_description_content_type="text/markdown",
     install_requires=["numpy>=1.18", "plotille>=3.7",],
     packages=["bashplot",],
@@ -41,7 +40,7 @@ setup(
     maintainer=__author__,
     maintainer_email=__email__,
     entry_points={
-        "console_scripts": ["bashplot = bashplot.bashplot.command_line_runner"]
+        "console_scripts": ["bashplot = bashplot.bashplot:command_line_runner"]
     },
     classifiers=[
         "Development Status :: 5 - Production/Stable",
