@@ -32,4 +32,6 @@ before_script:
 # command to run tests
 script:
   - coverage run -m unittest test_bashplot.py
-  - coverage report
+  # Generate test coverage report and upload to codecov.io
+  - coverage report -m
+  - codecov
