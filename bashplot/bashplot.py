@@ -1,5 +1,15 @@
 #!/usr/bin/env python
 """Bashplot: Instant data plotting from the terminal into the terminal."""
+
+
+######################################################
+#
+# bashplot - instant plotting via the command line
+# written by Anselm Hahn (Anselm.Hahn@gmail.com)
+# inspired by Benjamin Gleitzman (gleitz@mit.edu)
+#
+######################################################
+
 import argparse
 from pathlib import Path
 import sys
