@@ -248,9 +248,9 @@ args = {
             "size": [60, 40],
             "x_limits": None,
             "y_limits": None,
-            "scatter": True,
+            "scatter": False,
             "color": True,
-            "legend": False,
+            "legend": True,
             "version": False,
         }
         
