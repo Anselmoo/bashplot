@@ -25,10 +25,13 @@ def generate(fname="test_data"):
     y_2 = np.cos(x)
     data = np.array([x, y_2]).T
     np.savetxt(Path(f"./{fname}_cos.txt"), data)
-    
+
     data = np.array([x, y_1, y_2]).T
     np.savetxt(Path(f"./{fname}_mixed.txt"), data)
-    
+
+    data = np.array([x, y_1, y_2, 2.0 * (y_1 - y_2), (y_1 - y_2) ** 2,]).T
+    np.savetxt(Path(f"./{fname}_mixed.dat"), data, delimiter="\t")
+
     mu, sigma = 0, 0.1  # mean and standard deviation
     x = np.linspace(-0.3, 0.3)
     y = np.random.normal(mu, sigma, 50)

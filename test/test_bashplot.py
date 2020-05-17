@@ -38,13 +38,31 @@ class BashplotTestCase(unittest.TestCase):
             "skip_footer": 2,
             "usecols": None,
             "size": [60, 40],
-            "x_limits": [0., 3.],
-            "y_limits": [0., 3.],
+            "x_limits": [0.0, 3.0],
+            "y_limits": [0.0, 3.0],
             "scatter": True,
             "color": True,
             "legend": False,
             "version": True,
         }
+        # Example with different delimiter
+        self.singlefile = [Path("./test_data_mixed.dat")]
+        self.args_3 = {
+            "infile": self.singlefile,
+            "comments": None,
+            "delimiter": "\t",
+            "skip_header": 2,
+            "skip_footer": 2,
+            "usecols": (0, 1, 2, 3),
+            "size": [60, 40],
+            "x_limits": [0.0, 3.0],
+            "y_limits": [0.0, 3.0],
+            "scatter": False,
+            "color": True,
+            "legend": False,
+            "version": True,
+        }
+
     def test_fnames(self):
         self.assertEqual(
             bashplot.get_args(opt={"infile": self.infile})["infile"], self.infile
@@ -70,12 +88,16 @@ class BashplotTestCase(unittest.TestCase):
         )
 
     def test_default_run(self):
-        bashplot.bashplot(fnames=self.infile,args=self.args_1)
-        assert 1
-    def test_customize_run(self):
-        bashplot.bashplot(fnames=self.infile,args=self.args_2)
+        bashplot.bashplot(fnames=self.infile, args=self.args_1)
         assert 1
 
+    def test_customize_run_1(self):
+        bashplot.bashplot(fnames=self.infile, args=self.args_2)
+        assert 1
+
+    def test_customize_run_2(self):
+        bashplot.bashplot(fnames=self.singlefile, args=self.args_3)
+        assert 1
 
 
 if __name__ == "__main__":
