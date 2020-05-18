@@ -246,9 +246,7 @@ def get_args(opt=None):
     parser.add_argument(
         "-d",
         "--delimiter",
-        help=(
-            "define the type of deilimiter; default is any consecutive 'whitespace'"
-        ),
+        help=("define the type of deilimiter; default is any consecutive 'whitespace'"),
         default=None,
         type=str,
     )

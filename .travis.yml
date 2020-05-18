@@ -38,3 +38,8 @@ script:
   - coverage report -m
 after_success:
   - codecov
+
+notifications:
+  slack:
+    on_success: change
+    on_failure: always
