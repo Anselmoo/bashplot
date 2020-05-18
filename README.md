@@ -2,6 +2,7 @@
 [![Travis (.com) branch](https://img.shields.io/travis/com/Anselmoo/bashplot/master?logo=travis)](https://travis-ci.com/Anselmoo/bashplot)
 [![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi)](https://pypi.org/project/bashplot/)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
+[![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
 [![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)](https://github.com/Anselmoo/bashplot/blob/master/LICENSE)
 # bashplot
