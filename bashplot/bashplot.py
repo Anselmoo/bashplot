@@ -233,7 +233,6 @@ def get_args(opt=None):
     parser.add_argument(
         "infile", nargs="*", type=str, help="load data file(s) as ASCII"
     )
-
     parser.add_argument(
         "-cm",
         "--comments",
@@ -248,7 +247,7 @@ def get_args(opt=None):
         "-d",
         "--delimiter",
         help=(
-            "define the type of deilimiter; default is any consecutive " "'whitespace'"
+            "define the type of deilimiter; default is any consecutive 'whitespace'"
         ),
         default=None,
         type=str,
