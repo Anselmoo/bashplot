@@ -39,13 +39,13 @@ setup(
     long_description_content_type="text/markdown",
     install_requires=["numpy>=1.10", "plotille>=3.3",],
     packages=["bashplot",],
-    py_modules=[path.stem for path in Path(".").glob('bashplot/*.py')],
+    py_modules=[path.stem for path in Path(".").glob("bashplot/*.py")],
     author=__author__,
     author_email=__email__,
     maintainer=__author__,
     maintainer_email=__email__,
     url="https://github.com/Anselmoo/bashplot",
-    license='MIT',
+    license="MIT",
     entry_points={
         "console_scripts": ["bashplot = bashplot.bashplot:command_line_runner"]
     },
@@ -67,8 +67,6 @@ setup(
         "Topic :: Scientific/Engineering :: Visualization",
         "Topic :: Utilities",
     ],
-    keywords=[
-        'terminal', 'data-visualization', 'data-science', 'database',
-    ],
-    extras_require={"testing": ["pipenv"]}
+    keywords=["terminal", "data-visualization", "data-science", "database",],
+    extras_require={"testing": ["pipenv"]},
 )
