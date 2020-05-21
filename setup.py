@@ -11,6 +11,7 @@ __email__ = "Anselm.Hahn@gmail.com"
 
 
 def long_description():
+    #  deepcode ignore missing~close~open: <ignorable in the setup.py>
     readme = open(Path("./README.md")).read()
     changes = open(Path("./CHANGES.md")).read()
     todo = open(Path("./TODO.md")).read()
@@ -48,6 +49,10 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
         "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Intended Audience :: Science/Research",
+        "Operating System :: MacOS",
+        "Operating System :: Unix",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
