@@ -22,7 +22,7 @@ before_script:
   # exit-zero treats all errors as warnings.
   - flake8 . --count --exit-zero --max-complexity=10 --statistics
   # stop if doc-string is broken in bashplot.
-  - pydocstyle bashplot/bashplot.py
+  - pydocstyle --convention=numpy -e bashplot/bashplot.py
   # install bashplot
   - python setup.py install
   # isntall coverage and codecov for report
