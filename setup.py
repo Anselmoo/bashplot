@@ -2,6 +2,7 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
+
 from pathlib import Path
 
 import bashplot
@@ -38,6 +39,7 @@ setup(
     long_description_content_type="text/markdown",
     install_requires=["numpy>=1.10", "plotille>=3.3",],
     packages=["bashplot",],
+    py_modules=[path.stem for path in Path(".").glob('bashplot/*.py')],
     author=__author__,
     author_email=__email__,
     maintainer=__author__,
