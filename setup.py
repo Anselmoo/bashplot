@@ -67,4 +67,8 @@ setup(
         "Topic :: Scientific/Engineering :: Visualization",
         "Topic :: Utilities",
     ],
+    keywords=[
+        'terminal', 'data-visualization', 'data-science', 'database',
+    ],
+    extras_require={"testing": ["pipenv"]}
 )
