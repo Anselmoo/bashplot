@@ -21,12 +21,12 @@ def long_description():
 
     long_description = (
         f"{readme}\n\n"
-        "CHANGES\n"
-        "-------\n"
-        "{changes}\n"
-        "TODO\n"
-        "----\n"
-        "{todo}\n"
+        f"CHANGES\n"
+        f"-------\n"
+        f"{changes}\n"
+        f"TODO\n"
+        f"----\n"
+        f"{todo}\n"
     )
     return long_description
 
