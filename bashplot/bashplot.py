@@ -58,7 +58,7 @@ def load_data(fname, args):
     data : float-array
         Returns a 2D-Numpy-array with `dtype=float`.
     """
-    data = np.genfromtxt(
+    return np.genfromtxt(
         fname,
         dtype=np.float,
         comments=args["comments"],
@@ -67,7 +67,6 @@ def load_data(fname, args):
         skip_footer=args["skip_footer"],
         usecols=args["usecols"],
     )
-    return data
 
 
 def plot_plot(fig, x, Y, label):
@@ -94,11 +93,10 @@ def plot_plot(fig, x, Y, label):
         Returns the function itself for a smaller (n-1) float-array (Y) until it is an
         1D-array.
     """
+    fig.plot(x, Y[:, 0], label=label)
     if Y.shape[1] == 1:
-        fig.plot(x, Y[:, 0], label=label)
         return fig
     else:
-        fig.plot(x, Y[:, 0], label=label)
         return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
@@ -127,11 +125,10 @@ def plot_scatter(fig, x, Y, label):
         Returns the function itself for a smaller (n-1) float-array (Y) until it is an
         1D-array.
     """
+    fig.scatter(x, Y[:, 0], label=label)
     if Y.shape[1] == 1:
-        fig.scatter(x, Y[:, 0], label=label)
         return fig
     else:
-        fig.scatter(x, Y[:, 0], label=label)
         return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
