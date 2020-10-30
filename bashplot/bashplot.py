@@ -58,7 +58,7 @@ def load_data(fname, args):
     data : float-array
         Returns a 2D-Numpy-array with `dtype=float`.
     """
-    data = np.genfromtxt(
+    return np.genfromtxt(
         fname,
         dtype=np.float,
         comments=args["comments"],
@@ -67,7 +67,6 @@ def load_data(fname, args):
         skip_footer=args["skip_footer"],
         usecols=args["usecols"],
     )
-    return data
 
 
 def plot_plot(fig, x, Y, label):
@@ -85,20 +84,19 @@ def plot_plot(fig, x, Y, label):
         1D- or 2D-Numpy-array with the float column Y-values.
     label : str
         The label of the plot(s) is the current filename.
-    
+
     Returns
     -------
     fig :  class
-        Updated figure class for the terminal plot 
+        Updated figure class for the terminal plot
     plot_plot() : function
         Returns the function itself for a smaller (n-1) float-array (Y) until it is an
         1D-array.
     """
+    fig.plot(x, Y[:, 0], label=label)
     if Y.shape[1] == 1:
-        fig.plot(x, Y[:, 0], label=label)
         return fig
     else:
-        fig.plot(x, Y[:, 0], label=label)
         return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
@@ -118,27 +116,26 @@ def plot_scatter(fig, x, Y, label):
         1D- or 2D-Numpy-array with the float column Y-values.
     label : str
         The label of the scatter-plot(s) is the current filename.
-    
+
     Returns
     -------
     fig :  class
-        Updated figure class for the terminal plot 
+        Updated figure class for the terminal plot
     plot_scatter() : function
         Returns the function itself for a smaller (n-1) float-array (Y) until it is an
         1D-array.
     """
+    fig.scatter(x, Y[:, 0], label=label)
     if Y.shape[1] == 1:
-        fig.scatter(x, Y[:, 0], label=label)
         return fig
     else:
-        fig.scatter(x, Y[:, 0], label=label)
         return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
 def plot(data, args, label):
     """Generate the plots as classical or scatter plots.
 
-    plot() is generating the classical or scatter plots according to the arguments 
+    plot() is generating the classical or scatter plots according to the arguments
     `args`.
 
     Parameters
@@ -187,11 +184,11 @@ def plot(data, args, label):
 
 def bashplot(fnames, args):
     """bashplot.
-    
+
     bashplot() is plotting each file independently according to the args. For a
     filename list >1, bashplot() is calling itself again by reducing the list by
     the value of -1.
-    
+
     Parameters
     ----------
     fnames : str-list
@@ -215,12 +212,12 @@ def bashplot(fnames, args):
 
 def get_args(opt=None):
     """Get the parser arguments from the command line.
-    
+
     Parameters
     ----------
     opt : dict, optional
         Optional Dictionary for modifying the parser arguments; default is None.
-    
+
     Returns
     -------
     args : dict
