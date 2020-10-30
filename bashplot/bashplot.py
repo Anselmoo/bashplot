@@ -85,11 +85,11 @@ def plot_plot(fig, x, Y, label):
         1D- or 2D-Numpy-array with the float column Y-values.
     label : str
         The label of the plot(s) is the current filename.
-    
+
     Returns
     -------
     fig :  class
-        Updated figure class for the terminal plot 
+        Updated figure class for the terminal plot
     plot_plot() : function
         Returns the function itself for a smaller (n-1) float-array (Y) until it is an
         1D-array.
@@ -118,11 +118,11 @@ def plot_scatter(fig, x, Y, label):
         1D- or 2D-Numpy-array with the float column Y-values.
     label : str
         The label of the scatter-plot(s) is the current filename.
-    
+
     Returns
     -------
     fig :  class
-        Updated figure class for the terminal plot 
+        Updated figure class for the terminal plot
     plot_scatter() : function
         Returns the function itself for a smaller (n-1) float-array (Y) until it is an
         1D-array.
@@ -138,7 +138,7 @@ def plot_scatter(fig, x, Y, label):
 def plot(data, args, label):
     """Generate the plots as classical or scatter plots.
 
-    plot() is generating the classical or scatter plots according to the arguments 
+    plot() is generating the classical or scatter plots according to the arguments
     `args`.
 
     Parameters
@@ -187,11 +187,11 @@ def plot(data, args, label):
 
 def bashplot(fnames, args):
     """bashplot.
-    
+
     bashplot() is plotting each file independently according to the args. For a
     filename list >1, bashplot() is calling itself again by reducing the list by
     the value of -1.
-    
+
     Parameters
     ----------
     fnames : str-list
@@ -215,12 +215,12 @@ def bashplot(fnames, args):
 
 def get_args(opt=None):
     """Get the parser arguments from the command line.
-    
+
     Parameters
     ----------
     opt : dict, optional
         Optional Dictionary for modifying the parser arguments; default is None.
-    
+
     Returns
     -------
     args : dict

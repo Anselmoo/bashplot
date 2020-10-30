@@ -7,3 +7,4 @@ bashplot.egg-info/
 __pycache__
 .coverage
 test/.coverage
+.dccache
