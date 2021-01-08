@@ -37,7 +37,7 @@ jobs:
         pydocstyle --convention=numpy -e bashplot/bashplot.py
     - name: Test with pytest
       run: |
-        coverage run  --source=./test -m unittest discover -s "test" -p "test*.py"
+        coverage run  --source=./test -m unittest
         coverage report -m
     - name: Codecov
       uses: codecov/codecov-action@v1.0.15
