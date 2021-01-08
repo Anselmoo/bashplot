@@ -38,9 +38,11 @@ jobs:
     - name: Install bashplot
       run: |
         pip install .
-    - name: Test with pytest
+    - name: Test with pytest and coverage
       run: |
-        pytest -vv --cov=./test --cov-report=xml
+        coverage run -m pytest test/test*.py -vv
+        coverage report -m
+        coverage xml
     - name: Codecov
       uses: codecov/codecov-action@v1
       with:

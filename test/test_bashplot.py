@@ -63,7 +63,6 @@ args_3 = {
 
 
 def test_fnames():
-
     assert bashplot.get_args(opt={"infile": test_txt})["infile"] == test_txt
 
 

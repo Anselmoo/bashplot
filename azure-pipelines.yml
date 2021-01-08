@@ -44,5 +44,7 @@ steps:
   displayName: 'Install bashplot'
 
 - script: |
-    pytest -vv --cov=./test --cov-report=xml
+    coverage run -m pytest test/test*.py -vv
+    coverage report -m
+    coverage xml
   displayName: 'pytest'
