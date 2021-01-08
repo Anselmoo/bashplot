@@ -3,6 +3,7 @@
 from pathlib import Path
 from unittest import mock
 
+import pytest
 import sample_generator
 
 from bashplot import bashplot
@@ -11,8 +12,8 @@ sample_generator.generate()
 
 print()
 
-test_txt = Path.cwd().glob("test*.txt")
-test_dat = Path.cwd().glob("test*.dat")
+test_txt = list(Path.cwd().glob("test*.txt"))
+test_dat = list(Path.cwd().glob("test*.dat"))
 
 args_1 = {
     "infile": test_txt,
@@ -103,24 +104,56 @@ def test_usecols():
 
 
 @mock.patch("bashplot.bashplot.bashplot")
-def test_default_run(bashplot):
+def test_default_run_mock(bashplot):
     bashplot.bashplot(fnames=test_txt, args=args_1)
     assert bashplot.bashplot.is_called
 
 
+def test_default_run():
+    bashplot.bashplot(fnames=test_txt, args=args_1)
+    assert True
+
+
 @mock.patch("bashplot.bashplot.bashplot")
-def test_customize_run_1(bashplot):
+def test_customize_run_mock_1(bashplot):
     bashplot.bashplot(fnames=test_txt, args=args_2)
     assert bashplot.bashplot.is_called
 
 
+def test_customize_run_1():
+    bashplot.bashplot(fnames=test_txt, args=args_2)
+    assert True
+
+
 @mock.patch("bashplot.bashplot.bashplot")
-def test_customize_run_2(bashplot):
+def test_customize_run_mock_2(bashplot):
     bashplot.bashplot(fnames=test_dat, args=args_3)
     assert bashplot.bashplot.is_called
 
 
+def test_customize_run_2():
+    bashplot.bashplot(fnames=test_dat, args=args_3)
+    assert True
+
+
 @mock.patch("bashplot.bashplot.command_line_runner")
-def test_command_line(command_line_runner):
+def test_command_line_mock(command_line_runner):
     bashplot.command_line_runner()
     assert bashplot.command_line_runner.is_called
+
+
+def test_command_line_1():
+    bashplot.command_line_runner()
+    assert True
+
+
+def test_log(capfd):
+    bashplot.log("msg")
+    out, _ = capfd.readouterr()
+    assert out == "msg\n"
+
+
+def test_log_error(capfd):
+    bashplot.log("msg", mode=True)
+    out, _ = capfd.readouterr()
+    assert out == "[ERROR] msg\n"
