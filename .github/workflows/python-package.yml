@@ -37,8 +37,7 @@ jobs:
         pydocstyle --convention=numpy -e bashplot/bashplot.py
     - name: Test with pytest
       run: |
-        coverage run  --source=./test -m unittest
-        coverage report -m
+        pytest -vv --cov=./test --cov-report=xml
     - name: Codecov
       uses: codecov/codecov-action@v1
       with:
@@ -47,7 +46,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    steps:  
+    steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
