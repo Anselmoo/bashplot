@@ -95,7 +95,7 @@ def plot_plot(fig, x, Y, label):
 def plot_scatter(fig, x, Y, label):
     """Make the scatter-figures.
 
-    plot_scatter() is generating a single- or multi-plot by recursiving calling
+    plot_scatter() is generating a single- or multi-plot by recursive calling
     scatter().
 
     Parameters
