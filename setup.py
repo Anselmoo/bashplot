@@ -42,7 +42,7 @@ setup(
     description="Instant data plotting from the terminal into the terminal",
     long_description=long_description(),
     long_description_content_type="text/markdown",
-    install_requires=requirements(),
+    install_requires=requirments(),
     packages=[
         "bashplot",
     ],
