@@ -35,6 +35,9 @@ jobs:
         isort . --check -v
         flake8 . --count --exit-zero --max-complexity=10 --statistics
         pydocstyle --convention=numpy -e bashplot/bashplot.py
+    - name: Install bashplot
+      run: |
+        pip install .
     - name: Test with pytest
       run: |
         pytest -vv --cov=./test --cov-report=xml

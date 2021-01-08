@@ -64,43 +64,43 @@ args_3 = {
 
 def test_fnames():
 
-    bashplot.get_args(opt={"infile": test_txt})["infile"] == test_txt
+    assert bashplot.get_args(opt={"infile": test_txt})["infile"] == test_txt
 
 
 def test_options_scatter():
-    bashplot.get_args(opt={"scatter": True})["scatter"] == True
+    assert bashplot.get_args(opt={"scatter": True})["scatter"] == True
 
 
 def test_options_color():
-    bashplot.get_args(opt={"color": True})["color"] == True
+    assert bashplot.get_args(opt={"color": True})["color"] == True
 
 
 def test_options_legend():
-    bashplot.get_args(opt={"legend": False})["legend"] == False
+    assert bashplot.get_args(opt={"legend": False})["legend"] == False
 
 
 def test_options_version():
-    bashplot.get_args(opt={"version": True})["version"] == True
+    assert bashplot.get_args(opt={"version": True})["version"] == True
 
 
 def test_xlimits():
-    bashplot.get_args(opt={"x_limits": [0.0, 20.0]})["x_limits"] == [0.0, 20.0]
+    assert bashplot.get_args(opt={"x_limits": [0.0, 20.0]})["x_limits"] == [0.0, 20.0]
 
 
 def test_ylimits():
-    bashplot.get_args(opt={"y_limits": [0.0, 20.0]})["y_limits"] == [0.0, 20.0]
+    assert bashplot.get_args(opt={"y_limits": [0.0, 20.0]})["y_limits"] == [0.0, 20.0]
 
 
 def test_size():
-    bashplot.get_args(opt={"size": [60, 60]})["size"] == [60, 60]
+    assert bashplot.get_args(opt={"size": [60, 60]})["size"] == [60, 60]
 
 
 def test_ranges_default():
-    bashplot.get_args()["size"] == [60, 40]
+    assert bashplot.get_args()["size"] == [60, 40]
 
 
 def test_usecols():
-    bashplot.get_args(opt={"usecols": [0, 2, 5]})["usecols"] == [0, 2, 5]
+    assert bashplot.get_args(opt={"usecols": [0, 2, 5]})["usecols"] == [0, 2, 5]
 
 
 @mock.patch("bashplot.bashplot.bashplot")
