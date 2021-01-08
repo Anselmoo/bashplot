@@ -1,2 +1,2 @@
 """bashplot."""
-__version__ = "0.3_1"
+__version__ = "0.40"
