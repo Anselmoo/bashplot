@@ -50,7 +50,7 @@ jobs:
     steps:
     - name: Publish package
       if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
