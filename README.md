@@ -46,7 +46,7 @@ Legend:
 
 or
 
-```pip install https://github.com/Anselmoo/bashplot.git```
+```pip install git+https://github.com/Anselmoo/bashplot.git```
 
 or 
 
