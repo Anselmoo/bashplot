@@ -1,16 +1,16 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
+name = "pypi"
 
 [packages]
-plotille = "*"
-numpy = "*"
-pytest = "*"
-pytest-cov = "*"
+bashplot = {editable = true, path = "."}
+
+[dev-packages]
 coverage = "*"
+pytest = "*"
+isort = "*"
+black = "==20.8b1"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
