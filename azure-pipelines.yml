@@ -32,7 +32,7 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    flake8 bashplot/ --count --max-line-length=88 --ignore=W293,W291 --statistic
+    flake8 bashplot/ --count --statistic
     black . --check -v
     isort . --check -v
     flake8 . --count --exit-zero --max-complexity=10 --statistics
@@ -44,7 +44,7 @@ steps:
   displayName: 'Install bashplot'
 
 - script: |
-    coverage run -m pytest test/test*.py -vv
+    coverage run -m pytest -vv
     coverage report -m
     coverage xml
   displayName: 'pytest'
