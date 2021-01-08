@@ -17,14 +17,7 @@ from pathlib import Path
 import numpy as np
 import plotille as plt
 
-try:
-    from . import __version__
-except ImportError:
-    from __init__ import __version__
-
-if sys.version < "3":
-    print("Unsupported Python Version (version < 3)!")
-    sys.exit(1)
+from . import __version__
 
 
 def log(msg, mode=None):

@@ -28,23 +28,23 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
-    pip install black
-    pip install flake8
-    pip install pydocstyle
-    flake8 bashplot/ --count --max-line-length=88 --ignore=W293,W291 --statistic
-    black bashplot/ --check -v
-    pydocstyle bashplot/bashplot.py
+    pip install -r dev-requirements.txt
   displayName: 'Install dependencies'
+
+- script: |
+    flake8 bashplot/ --count --max-line-length=88 --ignore=W293,W291 --statistic
+    black . --check -v
+    isort . --check -v
+    flake8 . --count --exit-zero --max-complexity=10 --statistics
+    pydocstyle --convention=numpy -e bashplot/bashplot.py
+  displayName: 'Check style and  settings'
 
 - script: |
     python setup.py install
   displayName: 'Install bashplot'
 
 - script: |
-
-    pip install coverage
-    pip install pytest-azurepipelines
-    cd test
-    coverage run -m unittest test_bashplot.py
-    coverage report
+    coverage run -m pytest test/test*.py -vv
+    coverage report -m
+    coverage xml
   displayName: 'pytest'

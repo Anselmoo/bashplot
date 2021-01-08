@@ -8,11 +8,14 @@ bashplot = {editable = true, path = "."}
 
 [dev-packages]
 coverage = "*"
-pytest = "*"
 isort = "*"
 black = "==20.8b1"
 flake8 = "*"
 pydocstyle = "*"
+pytest = "*"
+pytest-clarity = "*"
+pytest-cov = "*"
+pytest-sugar = "*"
 
 [requires]
 python_version = "3.8"

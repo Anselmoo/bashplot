@@ -35,10 +35,14 @@ jobs:
         isort . --check -v
         flake8 . --count --exit-zero --max-complexity=10 --statistics
         pydocstyle --convention=numpy -e bashplot/bashplot.py
-    - name: Test with pytest
+    - name: Install bashplot
       run: |
-        coverage run  --source=./test -m unittest
+        pip install .
+    - name: Test with pytest and coverage
+      run: |
+        coverage run -m pytest test/test*.py -vv
         coverage report -m
+        coverage xml
     - name: Codecov
       uses: codecov/codecov-action@v1
       with:
