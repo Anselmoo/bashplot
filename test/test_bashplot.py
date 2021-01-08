@@ -68,19 +68,19 @@ def test_fnames():
 
 
 def test_options_scatter():
-    assert bashplot.get_args(opt={"scatter": True})["scatter"] == True
+    assert bashplot.get_args(opt={"scatter": True})["scatter"] is True
 
 
 def test_options_color():
-    assert bashplot.get_args(opt={"color": True})["color"] == True
+    assert bashplot.get_args(opt={"color": True})["color"] is True
 
 
 def test_options_legend():
-    assert bashplot.get_args(opt={"legend": False})["legend"] == False
+    assert bashplot.get_args(opt={"legend": False})["legend"] is False
 
 
 def test_options_version():
-    assert bashplot.get_args(opt={"version": True})["version"] == True
+    assert bashplot.get_args(opt={"version": True})["version"] is True
 
 
 def test_xlimits():
