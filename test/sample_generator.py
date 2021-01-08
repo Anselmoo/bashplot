@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import numpy as np
 
 
@@ -8,7 +9,7 @@ def generate(fname="test_data"):
     generate() generates an example test-sets for:
     1.  sin from -2 * pi to +2 * pi for sinus.
     2.  cos from -2 * pi to +2 * pi for cosinus.
-    3.  random gaussian distribution 
+    3.  random gaussian distribution
 
     Parameters
     ----------
@@ -29,7 +30,15 @@ def generate(fname="test_data"):
     data = np.array([x, y_1, y_2]).T
     np.savetxt(Path(f"./{fname}_mixed.txt"), data)
 
-    data = np.array([x, y_1, y_2, 2.0 * (y_1 - y_2), (y_1 - y_2) ** 2,]).T
+    data = np.array(
+        [
+            x,
+            y_1,
+            y_2,
+            2.0 * (y_1 - y_2),
+            (y_1 - y_2) ** 2,
+        ]
+    ).T
     np.savetxt(Path(f"./{fname}_mixed.dat"), data, delimiter="\t")
 
     mu, sigma = 0, 0.1  # mean and standard deviation

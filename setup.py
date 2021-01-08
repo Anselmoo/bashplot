@@ -31,14 +31,21 @@ def long_description():
     return long_description
 
 
+def requirments():
+    with open("requirements.txt") as f:
+        return f.read().splitlines()
+
+
 setup(
     name="bashplot",
     version=bashplot.__version__,
     description="Instant data plotting from the terminal into the terminal",
     long_description=long_description(),
     long_description_content_type="text/markdown",
-    install_requires=["numpy>=1.10", "plotille>=3.3",],
-    packages=["bashplot",],
+    install_requires=requirments(),
+    packages=[
+        "bashplot",
+    ],
     py_modules=[path.stem for path in Path(".").glob("bashplot/*.py")],
     author=__author__,
     author_email=__email__,
@@ -59,14 +66,19 @@ setup(
         "Operating System :: MacOS",
         "Operating System :: Unix",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Topic :: System :: Shells",
         "Topic :: Scientific/Engineering :: Visualization",
         "Topic :: Utilities",
     ],
-    keywords=["terminal", "data-visualization", "data-science", "database",],
+    keywords=[
+        "terminal",
+        "data-visualization",
+        "data-science",
+        "database",
+    ],
     extras_require={"testing": ["pipenv"]},
 )

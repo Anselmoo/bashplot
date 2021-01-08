@@ -1,4 +1,4 @@
-[![Travis (.com) branch](https://img.shields.io/travis/com/Anselmoo/bashplot/master?logo=travis)](https://travis-ci.com/Anselmoo/bashplot)
+![Python Package](https://github.com/Anselmoo/bashplot/workflows/Python%20Package/badge.svg)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
 [![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
@@ -278,7 +278,7 @@ bashplot.bashplot(fnames, args)
 
 I'm happy to accept how to improve batchplot; please forward your [issues](https://github.com/Anselmoo/bashplot/issues) or [pull requests](https://github.com/Anselmoo/bashplot/pulls).
 
-Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), and [pydocstyle](https://github.com/PyCQA/pydocstyle).
+Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), [isort](https://github.com/PyCQA/isort) and [pydocstyle](https://github.com/PyCQA/pydocstyle).
 
 ## License
 ---

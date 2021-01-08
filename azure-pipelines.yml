@@ -16,6 +16,8 @@ strategy:
       python.version: '3.7'
     Python38:
       python.version: '3.8'
+    Python39:
+      python.version: '3.9'
 
 steps:
 - task: UsePythonVersion@0
@@ -41,7 +43,7 @@ steps:
 - script: |
 
     pip install coverage
-    pipt install pytest-azurepipelines
+    pip install pytest-azurepipelines
     cd test
     coverage run -m unittest test_bashplot.py
     coverage report

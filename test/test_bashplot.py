@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 """Test for basplot."""
+import unittest
 from glob import glob
 from pathlib import Path
-import unittest
 
 from bashplot import bashplot
 
