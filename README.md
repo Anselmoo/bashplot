@@ -278,7 +278,7 @@ bashplot.bashplot(fnames, args)
 
 I'm happy to accept how to improve batchplot; please forward your [issues](https://github.com/Anselmoo/bashplot/issues) or [pull requests](https://github.com/Anselmoo/bashplot/pulls).
 
-Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), and [pydocstyle](https://github.com/PyCQA/pydocstyle).
+Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), [isort](https://github.com/PyCQA/isort) and [pydocstyle](https://github.com/PyCQA/pydocstyle).
 
 ## License
 ---

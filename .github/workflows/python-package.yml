@@ -40,9 +40,13 @@ jobs:
         coverage run  --source=./test -m unittest
         coverage report -m
     - name: Codecov
-      uses: codecov/codecov-action@v1.0.15
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        env_vars: OS,PYTHON
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
