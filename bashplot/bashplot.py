@@ -96,8 +96,7 @@ def plot_plot(fig, x, Y, label):
     fig.plot(x, Y[:, 0], label=label)
     if Y.shape[1] == 1:
         return fig
-    else:
-        return plot_plot(fig, x, Y[:, 1:], label=label)
+    return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
 def plot_scatter(fig, x, Y, label):
@@ -128,8 +127,7 @@ def plot_scatter(fig, x, Y, label):
     fig.scatter(x, Y[:, 0], label=label)
     if Y.shape[1] == 1:
         return fig
-    else:
-        return plot_plot(fig, x, Y[:, 1:], label=label)
+    return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
 def plot(data, args, label):
