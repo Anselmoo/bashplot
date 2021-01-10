@@ -81,4 +81,6 @@ setup(
         "database",
     ],
     extras_require={"testing": ["pipenv"]},
+    platforms=["Windows", "Linux", "Solaris", "Mac OS-X", "Unix"],
+    test_suite='pytest',
 )
