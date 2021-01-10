@@ -1,4 +1,4 @@
-![Python Package](https://github.com/Anselmoo/bashplot/workflows/Python%20Package/badge.svg)
+[![Python Package](https://github.com/Anselmoo/bashplot/workflows/Python%20Package/badge.svg)](https://github.com/Anselmoo/bashplot/actions?query=workflow%3A%22Python+Package%22)
 [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
 [![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot)
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
