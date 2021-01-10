@@ -14,6 +14,7 @@ print()
 
 test_txt = list(Path.cwd().glob("test*.txt"))
 test_dat = list(Path.cwd().glob("test*.dat"))
+test_out = list(Path.cwd().glob("test*.out"))
 
 args_1 = {
     "infile": test_txt,
@@ -60,6 +61,21 @@ args_3 = {
     "color": True,
     "legend": True,
     "version": True,
+}
+args_4 = {
+    "infile": test_out,
+    "comments": None,
+    "delimiter": None,
+    "skip_header": 0,
+    "skip_footer": 0,
+    "usecols": (0, 1),
+    "size": [30, 20],
+    "x_limits": None,
+    "y_limits": None,
+    "scatter": False,
+    "color": False,
+    "legend": True,
+    "version": False,
 }
 
 
@@ -133,6 +149,11 @@ def test_customize_run_mock_2(bashplot):
 
 def test_customize_run_2():
     bashplot.bashplot(fnames=test_dat, args=args_3)
+    assert True
+
+
+def test_customize_run_3():
+    bashplot.bashplot(fnames=test_out, args=args_4)
     assert True
 
 
