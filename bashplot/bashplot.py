@@ -151,7 +151,7 @@ def plot(data, args, label):
         if args["y_limits"]:
             fig.set_y_limits(min_=args["y_limits"][0], max_=args["y_limits"][1])
         else:
-            fig.set_y_limits(min_=np.min(data[:, 1]), max_=np.max(data[:, 1]))
+            fig.set_y_limits(min_=np.min(data[:, 1:]), max_=np.max(data[:, 1:]))
 
         if args["color"]:
             fig.color_mode = "rgb"
