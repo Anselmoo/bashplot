@@ -46,3 +46,8 @@ def generate(fname="test_data"):
     y = np.random.normal(mu, sigma, 50)
     data = np.array([x, y]).T
     np.savetxt(Path(f"./{fname}_random_gaussian.txt"), data)
+
+    np.savetxt(
+        Path(f"./{fname}_equaldata.out"),
+        np.array([[-1.0, 2.0], [0.0, 2.0], [1.0, 2.0]]),
+    )
