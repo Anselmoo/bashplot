@@ -4,7 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-bashplot = {editable = true, path = "."}
+numpy = "*"
+plotille = "*"
 
 [dev-packages]
 coverage = "*"
@@ -13,7 +14,7 @@ black = "==20.8b1"
 flake8 = "*"
 pydocstyle = "*"
 pytest = "*"
-pytest-clarity = "*"
+pytest-clarity = "==0.3.0a0"
 pytest-cov = "*"
 pytest-sugar = "*"
 

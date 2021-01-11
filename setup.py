@@ -1,7 +1,7 @@
 try:
-    from setuptools import setup
+    from setuptools import find_packages, setup
 except ImportError:
-    from distutils.core import setup
+    from distutils.core import setup, find_packages
 
 from pathlib import Path
 
@@ -43,9 +43,7 @@ setup(
     long_description=long_description(),
     long_description_content_type="text/markdown",
     install_requires=requirments(),
-    packages=[
-        "bashplot",
-    ],
+    packages=find_packages(),
     py_modules=[path.stem for path in Path(".").glob("bashplot/*.py")],
     author=__author__,
     author_email=__email__,
@@ -65,6 +63,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: MacOS",
         "Operating System :: Unix",
+        "Operating System :: Windows",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
@@ -81,4 +80,6 @@ setup(
         "database",
     ],
     extras_require={"testing": ["pipenv"]},
+    platforms=["Windows", "Linux", "Solaris", "Mac OS-X", "Unix"],
+    test_suite="pytest",
 )
