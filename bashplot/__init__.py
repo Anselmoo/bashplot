@@ -1,2 +1,2 @@
-"""bashplot."""
-__version__ = "0.40"
+"""Bashplot: Instant data plotting from the terminal into the terminal."""
+__version__ = "1.0"
