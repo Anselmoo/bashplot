@@ -73,7 +73,7 @@ Legend:
 ## Requirments
 ---
 
- 1. Python3
+ 1. [Python3](https://www.python.org/download/releases/3.0/)
  2. [numpy](https://github.com/numpy/numpy)
  3. [plotille](https://github.com/tammoippen/plotille)
 
