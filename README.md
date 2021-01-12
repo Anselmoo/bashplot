@@ -1,14 +1,21 @@
-[![Python Package](https://github.com/Anselmoo/bashplot/workflows/Python%20Package/badge.svg)](https://github.com/Anselmoo/bashplot/actions?query=workflow%3A%22Python+Package%22)
-[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
-[![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot)
-[![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
-[![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)](https://github.com/Anselmoo/bashplot/blob/master/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi&logoColor=yellow)](https://pypi.org/project/bashplot/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bashplot?logo=python&logoColor=yellow)](https://pypi.org/project/bashplot/)
-# bashplot
 
-## Instant data plotting from the terminal into the terminal
----
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" alt="Project logo"></a>
+</p>
+
+<h1 align="center">bashplot </h1>
+<h2 align="center"> Instant data plotting from the terminal into the terminal.
+    <br> 
+</h2>
+
+<div align="center">
+
+| **PyPi** | **Build Status** | **Style**|
+| :---------------: | :--------------: | :------: |
+| [![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi&logoColor=yellow)](https://pypi.org/project/bashplot/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bashplot?logo=python&logoColor=yellow)](https://pypi.org/project/bashplot/)| [![Python Package](https://github.com/Anselmoo/bashplot/workflows/Python%20Package/badge.svg)](https://github.com/Anselmoo/bashplot/actions?query=workflow%3A%22Python+Package%22) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot) [![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot) | [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) [![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)](https://github.com/Anselmoo/bashplot/blob/master/LICENSE)|
+</div>
+
 
 You are working as a data scientist with HPCs and servers but without graphical interfaces? You don't want to download every time your data-files and -sets to see how your data looks?
 
@@ -241,6 +248,14 @@ optional arguments:
    ⠤⠤ test_data_mixed.dat
    ⠤⠤ test_data_mixed.dat
    ```
+## Coloured Example
+---
+
+ <p align="center">
+    <br>
+    <img src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" width="50%"/>
+    </br>
+</p>
 
 ## Using as built-in
 ----
