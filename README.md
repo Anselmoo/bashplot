@@ -1,7 +1,8 @@
 
 <p align="center">
-  <a href="" rel="noopener">
- <img width=50% height=50% src="https://github.com/Anselmoo/bashplot/blob/master/docs/img/bashplot.png?raw=true"></a>
+    <br>
+    <img src="https://github.com/Anselmoo/bashplot/blob/master/docs/img/bashplot.png?raw=true" width="50%"/>
+    </br>
 </p>
 
 <h1 align="center">bashplot </h1>
@@ -263,7 +264,7 @@ optional arguments:
 ## Coloured Example
 ---
 
- <p align="center">
+<p align="center">
     <br>
     <img src="https://github.com/Anselmoo/bashplot/blob/master/docs/img/bashplot.png?raw=true" width="75%"/>
     </br>
