@@ -129,7 +129,7 @@ optional arguments:
                         values.
   -sc, --scatter        replaced regular plot by scatter plot
   -c, --color           enable RGB colorized the plots
-  -l, --legend          enable the legend of the plots
+  -l, --legend          disable the legend of the plots
   -v, --version         displays the current version of bathchplot
 ```
 
