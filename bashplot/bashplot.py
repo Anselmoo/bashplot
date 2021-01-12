@@ -321,7 +321,7 @@ def get_args(opt=None):
         "-c", "--color", help=("enable RGB colorized the plots"), action="store_true"
     )
     parser.add_argument(
-        "-l", "--legend", help=("enable the legend of the plots"), action="store_false"
+        "-l", "--legend", help=("disable the legend of the plots"), action="store_false"
     )
     parser.add_argument(
         "-v",

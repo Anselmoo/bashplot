@@ -1,17 +1,31 @@
-[![Python Package](https://github.com/Anselmoo/bashplot/workflows/Python%20Package/badge.svg)](https://github.com/Anselmoo/bashplot/actions?query=workflow%3A%22Python+Package%22)
-[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot)
-[![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot)
-[![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) 
-[![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)](https://github.com/Anselmoo/bashplot/blob/master/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi&logoColor=yellow)](https://pypi.org/project/bashplot/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bashplot?logo=python&logoColor=yellow)](https://pypi.org/project/bashplot/)
-# bashplot
-## Instant data plotting from the terminal into the terminal
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=50% height=50% src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" alt="Project logo"></a>
+</p>
+
+<h1 align="center">bashplot </h1>
+<h2 align="center"> <i> A picture in the terminal is worth a thousand records in the dataset. </i>
+    <br> 
+</h2>
+
+<div align="center">
+
+| **PyPi** | **Build Status** | **Style**|
+| :---------------: | :--------------: | :------: |
+| [![PyPI](https://img.shields.io/pypi/v/bashplot?logo=pypi&logoColor=yellow)](https://pypi.org/project/bashplot/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/bashplot?logo=python&logoColor=yellow)](https://pypi.org/project/bashplot/)| [![Python Package](https://github.com/Anselmoo/bashplot/workflows/Python%20Package/badge.svg)](https://github.com/Anselmoo/bashplot/actions?query=workflow%3A%22Python+Package%22) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Anselmoo/bashplot/master?logo=codefactor)](https://www.codefactor.io/repository/github/anselmoo/bashplot) [![Codecov branch](https://img.shields.io/codecov/c/github/Anselmoo/bashplot/master?logo=Codecov)](https://codecov.io/gh/Anselmoo/bashplot) | [![Code Style: Black](https://img.shields.io/badge/code%20style-black-black.svg)](https://github.com/ambv/black) [![GitHub](https://img.shields.io/github/license/Anselmoo/bashplot)](https://github.com/Anselmoo/bashplot/blob/master/LICENSE)|
+</div>
+
+## Instant data plotting from the terminal into the terminal.
 ---
 
-You are working as a data scientist with HPCs and servers but without graphical interfaces? You don't want to download every time your data-files and -sets to see how your data looks?
+Working with data on an HPC, server, or Cloud can become challenging without graphical interfaces. The most intuitive way to identify trends, patterns, and forms is by using a figure. `bashplot` allows visualizing data instantaneously as a figure just straight in the terminal, for three good reasons and more:
 
-Bashplot can visualize your data directly into your terminal window via the command line and gives the first idea about the trends in your data. Furthermore, it can be built into your code so you can check the data in a simple ASCII file without installing graphical routines for generating images.
+1. Primarily working with Cloud or web services makes it sometimes necessary to plot the results straight in the terminal. This request can be caused by safety politics, company rules, or missing functionality/ports for sftp. Struggling with downloading figure images from the Cloud to a locally installed image viewer like preview has motivated developing `bashplot`.
+2. Even if a local download from a Cloud service to the locally installed image reader is possible, the process just needs more time because data has to be first generated and saved with matplotlib, then downloaded, and finally load into the memory of the software. Yes, and every download costs money, even if not much.
+3. Finally, `bashplot` is also created to use the CI/CD pipeline like TravisCI, GitHub Action, or Azure DevOps as a little benchmark center, which allows you to get the first idea about your program's performance ML/models.
+
+`bashplot` can visualize your data directly into your terminal window via the command line and gives the first idea about the trends in your data. Furthermore, it can be built into your code so you can check the data in a simple ASCII file without installing graphical routines for generating images.
 
 ```bash
 ╰─ bashplot test_data_cos.txt -sz 15 15 -y -1.01 +1.01
@@ -24,7 +38,7 @@ Bashplot can visualize your data directly into your terminal window via the comm
 0.33666667 | ⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀
 0.20200000 | ⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀
 0.06733333 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀
--0.0673333 | ⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⢳⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⢒⠞⠒⠒⠒⠒⠒⠒⠒⠒⠒⡗⠒⠒⠒⠒⠒⠒⠒⠒⠒⢗⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⢲⠓⠒⠒⠒⠒⠒⠒⠒⠒⠒
+-0.0673333 | ⠒⠒⠒⠒⠒⠒⠒⠒⠒⢳⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⢒⠞⠒⠒⠒⠒⠒⠒⠒⠒⡗⠒⠒⠒⠒⠒⠒⠒⠒⢗⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⢲⠓⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒
 -0.2020000 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 -0.3366667 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 -0.4713333 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -39,24 +53,27 @@ Legend:
 -------
 ⠤⠤ test_data_cos.txt
 ```
+
 ## Installation
 ---
-```pip install bashplot```
 
-or
+```console
+   pip install bashplot
 
-```pip install git+https://github.com/Anselmoo/bashplot.git```
+   # or
 
-or 
+   pip install git+https://github.com/Anselmoo/bashplot.git```
 
-```bash
-pip install -r requirements.txt
-python setup.py install
+   # or 
+
+   pip install -r requirements.txt
+   python setup.py install
 ```
+
 ## Requirments
 ---
 
- 1. Python3
+ 1. [Python3](https://www.python.org/download/releases/3.0/)
  2. [numpy](https://github.com/numpy/numpy)
  3. [plotille](https://github.com/tammoippen/plotille)
 
@@ -118,7 +135,7 @@ optional arguments:
 ## Other examples
 ---
 
- 1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
+1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
   ```bash
      (Y)     ^
   0.99948622 |
@@ -131,7 +148,7 @@ optional arguments:
   0.29984586 | ⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   0.19989724 | ⠀⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   0.09994862 | ⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-           0 | ⣜⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣘⣄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣟⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣈⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
+           0 | ⣜⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣘⣄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣟⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣈⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
   -0.0999486 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰
   -0.1998972 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎
   -0.2998459 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀
@@ -159,7 +176,7 @@ optional arguments:
   0.30071911 | ⠀⠀⠀⠀⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀⠀⠀⠀⠀⠀⠀
   0.20082184 | ⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀
   0.10092457 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀
-  0.00102730 | ⣀⣀⣀⣀⣀⣀⣀⣀⣀⣈⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣸⣀⣀⣀⣀⣀⣀⣀⣀⣀⣇⣀⣀⣀⣀⣀⣀⣀⣀⣘⣄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣎⣀⣀⣀⣀⣀⣀⣀⣀⣀
+  0.00102730 | ⣀⣀⣀⣀⣀⣀⣀⣀⣈⣆⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣸⣀⣀⣀⣀⣀⣀⣀⣀⣇⣀⣀⣀⣀⣀⣀⣀⣘⣄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣎⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
   -0.0988700 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   -0.1987672 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
   -0.2986645 | ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -178,7 +195,8 @@ optional arguments:
   ⠤⠤ test_data_cos.txt
   ```
  
- 2. Plotting single file without legend `bashplot file -l`
+2. Plotting single file without legend `bashplot file -l`
+   
   ```bash
      (Y)     ^
   0.23492250 |
@@ -207,9 +225,10 @@ optional arguments:
   
   ```
 
- 3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
+3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
+  
   ```bash
-              .   (Y)     ^
+      (Y)     ^
             3 |
    2.85000000 | ⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
    2.70000000 | ⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⠒⠒⠒⠒⠉⠉⠉⠉⠒⠒⠤⢄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -230,7 +249,7 @@ optional arguments:
    0.45000000 | ⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⢀⠏⠒⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠒⠤⢄⡀⠀⠀⠀⠀⠀⠀⠀
    0.30000000 | ⡇⠀⠀⠀⠀⠀⠀⠀⢀⠤⠔⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⠀⠀⠈⠑⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠢⢄⡀⠀⠀⠀
    0.15000000 | ⡇⠀⠀⠀⢀⠤⠔⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠢⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠢⢄
-            0 | ⣇⣤⣒⣉⣁⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣠⣃⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣈⣒⣢⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
+            0 | ⣇⣤⣒⣉⣁⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣠⣃⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣈⣒⣢⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
    -----------|-|---------|---------|---------|---------|---------|---------|---------|---------|-> (X)
               | 0         0.3750000 0.7500000 1.1250000 1.5000000 1.8750000 2.2500000 2.6250000 3
    
@@ -240,6 +259,15 @@ optional arguments:
    ⠤⠤ test_data_mixed.dat
    ⠤⠤ test_data_mixed.dat
    ```
+
+## Coloured Example
+---
+
+ <p align="center">
+    <br>
+    <img src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" width="75%"/>
+    </br>
+</p>
 
 ## Using as built-in
 ----
@@ -277,7 +305,7 @@ bashplot.bashplot(fnames, args)
 
 I'm happy to accept how to improve batchplot; please forward your [issues](https://github.com/Anselmoo/bashplot/issues) or [pull requests](https://github.com/Anselmoo/bashplot/pulls).
 
-Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass TravisCI in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), [isort](https://github.com/PyCQA/isort) and [pydocstyle](https://github.com/PyCQA/pydocstyle).
+Keep in mind that [pull requests](https://github.com/Anselmoo/bashplot/pulls) have to pass GitHub Actions in combination with [flake8](https://github.com/PyCQA/flake8), [black](https://github.com/psf/black), [isort](https://github.com/PyCQA/isort) and [pydocstyle](https://github.com/PyCQA/pydocstyle).
 
 ## License
 ---
