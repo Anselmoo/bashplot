@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" alt="Project logo"></a>
+ <img width=50% height=50% src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" alt="Project logo"></a>
 </p>
 
 <h1 align="center">bashplot </h1>
@@ -47,20 +47,23 @@ Legend:
 -------
 ⠤⠤ test_data_cos.txt
 ```
+
 ## Installation
 ---
-```pip install bashplot```
 
-or
+```console
+   pip install bashplot
 
-```pip install git+https://github.com/Anselmoo/bashplot.git```
+   # or
 
-or 
+   pip install git+https://github.com/Anselmoo/bashplot.git```
 
-```bash
-pip install -r requirements.txt
-python setup.py install
+   # or 
+
+   pip install -r requirements.txt
+   python setup.py install
 ```
+
 ## Requirments
 ---
 
@@ -126,7 +129,7 @@ optional arguments:
 ## Other examples
 ---
 
- 1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
+1. Plotting multiple files for different window-size with `bashplot *txt -size 30 20`
   ```bash
      (Y)     ^
   0.99948622 |
@@ -186,7 +189,8 @@ optional arguments:
   ⠤⠤ test_data_cos.txt
   ```
  
- 2. Plotting single file without legend `bashplot file -l`
+2. Plotting single file without legend `bashplot file -l`
+   
   ```bash
      (Y)     ^
   0.23492250 |
@@ -215,7 +219,8 @@ optional arguments:
   
   ```
 
- 3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
+3. Plotting single file with multiple columns in one plot inr **RGB**-color`bashplot file -c`
+  
   ```bash
               .   (Y)     ^
             3 |
@@ -248,12 +253,13 @@ optional arguments:
    ⠤⠤ test_data_mixed.dat
    ⠤⠤ test_data_mixed.dat
    ```
+
 ## Coloured Example
 ---
 
  <p align="center">
     <br>
-    <img src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" width="50%"/>
+    <img src="https://github.com/Anselmoo/bashplot/blob/UpdateREADME/docs/img/bashplot.png?raw=true" width="75%"/>
     </br>
 </p>
 
