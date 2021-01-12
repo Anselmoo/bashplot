@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">bashplot </h1>
-<h2 align="center"> A picture in the terminal is worth a thousand records in a dataset.
+<h2 align="center"> <i> A picture in the terminal is worth a thousand records in a dataset. </i>
     <br> 
 </h2>
 
