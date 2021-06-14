@@ -14,7 +14,7 @@ black = "==20.8b1"
 flake8 = "*"
 pydocstyle = "*"
 pytest = "*"
-pytest-clarity = "==0.3.0a0"
+pytest-clarity = "==1.0.1"
 pytest-cov = "*"
 pytest-sugar = "*"
 
