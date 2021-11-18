@@ -8,6 +8,7 @@ import sample_generator
 
 from bashplot import bashplot
 
+
 sample_generator.generate()
 
 print()
