@@ -4,47 +4,44 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- master
+  - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: "ubuntu-latest"
 strategy:
   matrix:
     Python36:
-      python.version: '3.6'
+      python.version: "3.6"
     Python37:
-      python.version: '3.7'
+      python.version: "3.7"
     Python38:
-      python.version: '3.8'
+      python.version: "3.8"
     Python39:
-      python.version: '3.9'
+      python.version: "3.9"
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(python.version)'
-  displayName: 'Use Python $(python.version)'
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: "$(python.version)"
+    displayName: "Use Python $(python.version)"
 
-- script: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-    pip install -r dev-requirements.txt
-  displayName: 'Install dependencies'
+  - script: |
+      python -m pip install --upgrade pip
+      pip install poetry
+      poetry install
+    displayName: "Install dependencies"
 
-- script: |
-    flake8 bashplot/ --count --statistic
-    black . --check -v
-    isort . --check -v
-    flake8 . --count --exit-zero --max-complexity=10 --statistics
-    pydocstyle --convention=numpy -e bashplot/bashplot.py
-  displayName: 'Check style and  settings'
+  - script: |
+      poetry run flake8 bashplot/ --count --statistic
+      poetry run black . --check -v
+      poetry run isort . --check -v
+      poetry run flake8 . --count --exit-zero --max-complexity=10 --statistics
+      poetry run pydocstyle --convention=numpy -e bashplot/bashplot.py
+    displayName: "Check style and  settings"
 
-- script: |
-    python setup.py install
-  displayName: 'Install bashplot'
 
-- script: |
-    coverage run -m pytest -vv
-    coverage report -m
-    coverage xml
-  displayName: 'pytest'
+  - script: |
+      poetry run coverage run -m pytest -vv
+      poetry run coverage report -m
+      poetry run coverage xml
+    displayName: "pytest"

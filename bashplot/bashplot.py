@@ -12,7 +12,9 @@
 
 import argparse
 import sys
+
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import plotille as plt
@@ -20,7 +22,7 @@ import plotille as plt
 from . import __version__
 
 
-def log(msg, mode=None):
+def log(msg: str, mode: int = None) -> None:
     """Print messages to display.
 
     Parameters
@@ -36,7 +38,7 @@ def log(msg, mode=None):
         print(msg)
 
 
-def load_data(fname, args):
+def load_data(fname: str, args: dict) -> np.ndarray:
     """Load data via np.genfromtxt.
 
     Parameters
@@ -52,7 +54,7 @@ def load_data(fname, args):
         Returns a 2D-Numpy-array with `dtype=float`.
     """
     return np.genfromtxt(
-        fname,
+        Path(fname),
         dtype=np.float,
         comments=args["comments"],
         delimiter=args["delimiter"],
@@ -62,10 +64,10 @@ def load_data(fname, args):
     )
 
 
-def plot_plot(fig, x, Y, label):
+def plot_plot(fig: Any, x: np.ndarray, Y: np.ndarray, label: str) -> Any:
     """Make the plot-figures.
 
-    plot_plot() is generating a single- or multi-plot by recursiving calling plot().
+    plot_plot() is generating a single- or multi-plot by recursively calling plot().
 
     Parameters
     ----------
@@ -92,7 +94,7 @@ def plot_plot(fig, x, Y, label):
     return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
-def plot_scatter(fig, x, Y, label):
+def plot_scatter(fig, x: np.ndarray, Y: np.ndarray, label: str):
     """Make the scatter-figures.
 
     plot_scatter() is generating a single- or multi-plot by recursive calling
@@ -102,9 +104,9 @@ def plot_scatter(fig, x, Y, label):
     ----------
     fig : class
         Figure class for the terminal plot
-    x : float-array
+    x : np.ndarray
         1D-Numpy-array with the float column x-values.
-    Y : float-array
+    Y : np.ndarray
         1D- or 2D-Numpy-array with the float column Y-values.
     label : str
         The label of the scatter-plot(s) is the current filename.
@@ -123,7 +125,7 @@ def plot_scatter(fig, x, Y, label):
     return plot_plot(fig, x, Y[:, 1:], label=label)
 
 
-def plot(data, args, label):
+def plot(data: np.ndarray, args: dict, label: str) -> None:
     """Generate the plots as classical or scatter plots.
 
     plot() is generating the classical or scatter plots according to the arguments
@@ -139,7 +141,7 @@ def plot(data, args, label):
         The label of the scatter-plot(s) is the current filename.
     """
     fig = plt.Figure()
-    fig.widht = args["size"][0]
+    fig.width = args["size"][0]
     fig.height = args["size"][1]
     try:
 
@@ -178,7 +180,7 @@ def plot(data, args, label):
         sys.exit(1)
 
 
-def bashplot(fnames, args):
+def bashplot(fnames: str, args: dict) -> Any:
     """bashplot.
 
     bashplot() is plotting each file independently according to the args. For a
@@ -198,15 +200,15 @@ def bashplot(fnames, args):
         Returns the function itself for smaller (n-1) list of filenames (fnames).
     """
     if len(fnames) == 1:
-        data = load_data(fname=Path(fnames[0]), args=args)
+        data = load_data(fname=fnames[0], args=args)
         plot(data, args, label=fnames[0])
     else:
-        data = load_data(fname=Path(fnames[0]), args=args)
+        data = load_data(fname=fnames[0], args=args)
         plot(data, args, label=fnames[0])
         return bashplot(fnames[1:], args)
 
 
-def get_args(opt=None):
+def get_args(opt: dict = None) -> dict:
     """Get the parser arguments from the command line.
 
     Parameters
@@ -336,7 +338,7 @@ def get_args(opt=None):
     return args
 
 
-def command_line_runner():
+def command_line_runner() -> None:
     """Run bashplot() via command line."""
     args = get_args()
 
