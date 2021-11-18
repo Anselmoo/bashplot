@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bashplot"
-version = "1.0.2"
+version = "1.1.0"
 description = "Instant data plotting from the terminal into the terminal"
 readme = "README.md"
 authors = ["Anselm Hahn <Anselm.Hahn@gmail.com>"]
@@ -32,8 +32,8 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.6.2,<3.10"
 numpy = [
-    { version = "<=1.20", python = "==3.6" },
-    { version = "^1.21.4", python = ">3.6" }
+    { version = "<=1.20", python = "<3.7" },
+    { version = "^1.21.4", python = ">=3.7" }
 ]
 plotille = "^3.8.0"
 
@@ -91,5 +91,5 @@ exclude = '''
 [tool.flake8]
 max-doc-length = 100
 max-line-length = 88
-docstring-convention = "google"
+docstring-convention = "numpy"
 ignore = ["E203", "W503", "W605"]
