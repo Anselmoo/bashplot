@@ -322,12 +322,6 @@ args = {
 bashplot.bashplot(fnames, args)
 ```
 
-## Author
-
----
-
-- [Anselm Hahn](https://github.com/Anselmoo)
-
 ## Contributions
 
 ---
