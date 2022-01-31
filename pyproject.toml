@@ -38,7 +38,7 @@ numpy = [
 plotille = "^3.8.0"
 
 [tool.poetry.dev-dependencies]
-black = { version = "^21.11b1", allow-prereleases = true }
+black = { version = "^22.1", allow-prereleases = true }
 isort = "^5.10.1"
 flake8 = "^4.0.1"
 pydocstyle = "^6.1.1"
