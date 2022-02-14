@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bashplot"
-version = "1.1.0"
+version = "1.1.1"
 description = "Instant data plotting from the terminal into the terminal"
 readme = "README.md"
 authors = ["Anselm Hahn <Anselm.Hahn@gmail.com>"]
@@ -33,18 +33,18 @@ classifiers = [
 python = ">=3.6.2,<3.10"
 numpy = [
     { version = "<=1.20", python = "<3.7" },
-    { version = "^1.21.4", python = ">=3.7" }
+    { version = "^1.21.4", python = ">=3.7" },
 ]
 plotille = "^3.8.0"
 
 [tool.poetry.dev-dependencies]
-black = { version = "^21.11b1", allow-prereleases = true }
+black = "^22.0.1"
 isort = "^5.10.1"
 flake8 = "^4.0.1"
 pydocstyle = "^6.1.1"
 mypy = "^0.910"
 coverage = "^6.1.2"
-pytest = "^6.2.5"
+pytest = "^7.0.0"
 pytest-clarity = "^1.0.1"
 pytest-sugar = "^0.9.4"
 
