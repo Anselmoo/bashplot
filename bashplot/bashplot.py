@@ -64,7 +64,7 @@ def load_data(fname: str, args: dict) -> np.ndarray:
     )
 
 
-def plot_plot(fig: Any, x: np.ndarray, Y: np.ndarray, label: str) -> Any:
+def plot_plot(fig: Any, x: np.ndarray, y: np.ndarray, label: str) -> Any:
     """Make the plot-figures.
 
     plot_plot() is generating a single- or multi-plot by recursively calling plot().
@@ -75,8 +75,8 @@ def plot_plot(fig: Any, x: np.ndarray, Y: np.ndarray, label: str) -> Any:
         Figure class for the terminal plot
     x : float-array
         1D-Numpy-array with the float column x-values.
-    Y : float-array
-        1D- or 2D-Numpy-array with the float column Y-values.
+    y : float-array
+        1D- or 2D-Numpy-array with the float column y-values.
     label : str
         The label of the plot(s) is the current filename.
 
@@ -85,16 +85,16 @@ def plot_plot(fig: Any, x: np.ndarray, Y: np.ndarray, label: str) -> Any:
     fig :  class
         Updated figure class for the terminal plot
     plot_plot() : function
-        Returns the function itself for a smaller (n-1) float-array (Y) until it is an
+        Returns the function itself for a smaller (n-1) float-array (y) until it is an
         1D-array.
     """
-    fig.plot(x, Y[:, 0], label=label)
-    if Y.shape[1] == 1:
+    fig.plot(x, y[:, 0], label=label)
+    if y.shape[1] == 1:
         return fig
-    return plot_plot(fig, x, Y[:, 1:], label=label)
+    return plot_plot(fig, x, y[:, 1:], label=label)
 
 
-def plot_scatter(fig, x: np.ndarray, Y: np.ndarray, label: str):
+def plot_scatter(fig, x: np.ndarray, y: np.ndarray, label: str):
     """Make the scatter-figures.
 
     plot_scatter() is generating a single- or multi-plot by recursive calling
@@ -106,8 +106,8 @@ def plot_scatter(fig, x: np.ndarray, Y: np.ndarray, label: str):
         Figure class for the terminal plot
     x : np.ndarray
         1D-Numpy-array with the float column x-values.
-    Y : np.ndarray
-        1D- or 2D-Numpy-array with the float column Y-values.
+    y : np.ndarray
+        1D- or 2D-Numpy-array with the float column y-values.
     label : str
         The label of the scatter-plot(s) is the current filename.
 
@@ -116,13 +116,13 @@ def plot_scatter(fig, x: np.ndarray, Y: np.ndarray, label: str):
     fig :  class
         Updated figure class for the terminal plot
     plot_scatter() : function
-        Returns the function itself for a smaller (n-1) float-array (Y) until it is an
+        Returns the function itself for a smaller (n-1) float-array (y) until it is an
         1D-array.
     """
-    fig.scatter(x, Y[:, 0], label=label)
-    if Y.shape[1] == 1:
+    fig.scatter(x, y[:, 0], label=label)
+    if y.shape[1] == 1:
         return fig
-    return plot_plot(fig, x, Y[:, 1:], label=label)
+    return plot_plot(fig, x, y[:, 1:], label=label)
 
 
 def plot(data: np.ndarray, args: dict, label: str) -> None:
@@ -167,14 +167,12 @@ def plot(data: np.ndarray, args: dict, label: str) -> None:
         y = data[:, 1:]
 
         if args["scatter"]:
-            fig = plot_scatter(fig, x=x, Y=y, label=label)
+            fig = plot_scatter(fig, x=x, y=y, label=label)
         else:
-            fig = plot_plot(fig, x=x, Y=y, label=label)
+            fig = plot_plot(fig, x=x, y=y, label=label)
 
-        if args["legend"]:
-            log(fig.show(legend=True))
-        else:
-            log(fig.show(legend=False))
+        log(fig.show(legend=args["legend"]))
+
     except IndexError:
         log(f"corrupted data in {label}", mode=1)
         sys.exit(1)
@@ -351,7 +349,3 @@ def command_line_runner() -> None:
 
     fnames = args["infile"]
     bashplot(fnames, args)
-
-
-if __name__ == "__main__":
-    command_line_runner()
