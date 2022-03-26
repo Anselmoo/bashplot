@@ -122,7 +122,28 @@ def plot_scatter(fig, x: np.ndarray, y: np.ndarray, label: str):
     fig.scatter(x, y[:, 0], label=label)
     if y.shape[1] == 1:
         return fig
-    return plot_plot(fig, x, y[:, 1:], label=label)
+    return plot_scatter(fig, x, y[:, 1:], label=label)
+
+
+def fig_size(width: float, height: float) -> Any:
+    """Set the figure size.
+
+    Parameters
+    ----------
+    width : float
+        Width of the terminal plot.
+    height : float
+        Height of the terminal plot.
+
+    Returns
+    -------
+    fig : class
+        Figure class for the terminal plot
+    """
+    fig = plt.Figure()
+    fig.width = width
+    fig.height = height
+    return fig
 
 
 def plot(data: np.ndarray, args: dict, label: str) -> None:
@@ -140,9 +161,7 @@ def plot(data: np.ndarray, args: dict, label: str) -> None:
     label : str
         The label of the scatter-plot(s) is the current filename.
     """
-    fig = plt.Figure()
-    fig.width = args["size"][0]
-    fig.height = args["size"][1]
+    fig = fig_size(width=args["size"][0], height=args["size"][1])
     try:
 
         if args["x_limits"]:
