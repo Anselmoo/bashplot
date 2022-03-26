@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bashplot"
-version = "1.1.2"
+version = "1.1.1"
 description = "Instant data plotting from the terminal into the terminal"
 readme = "README.md"
 authors = ["Anselm Hahn <Anselm.Hahn@gmail.com>"]
