@@ -3,7 +3,6 @@
 from pathlib import Path
 from unittest import mock
 
-import pytest
 import sample_generator
 
 from bashplot import bashplot
