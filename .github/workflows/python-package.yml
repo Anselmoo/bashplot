@@ -40,7 +40,7 @@ jobs:
           poetry run coverage report -m
           poetry run coverage xml
       - name: Codecov
-        uses: codecov/codecov-action@v2.1.0
+        uses: codecov/codecov-action@v3.0.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           env_vars: OS,PYTHON
