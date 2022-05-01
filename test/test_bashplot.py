@@ -15,6 +15,7 @@ print()
 test_txt = list(Path.cwd().glob("test*.txt"))
 test_dat = list(Path.cwd().glob("test*.dat"))
 test_out = list(Path.cwd().glob("test*.out"))
+test_data_sin = list(Path.cwd().glob("test_data_sin.txt"))
 
 args_1 = {
     "infile": test_txt,
@@ -64,6 +65,21 @@ args_3 = {
 }
 args_4 = {
     "infile": test_out,
+    "comments": None,
+    "delimiter": None,
+    "skip_header": 0,
+    "skip_footer": 0,
+    "usecols": (0, 1),
+    "size": [30, 20],
+    "x_limits": None,
+    "y_limits": None,
+    "scatter": False,
+    "color": False,
+    "legend": True,
+    "version": False,
+}
+args_5 = {
+    "infile": test_data_sin,
     "comments": None,
     "delimiter": None,
     "skip_header": 0,
@@ -129,7 +145,6 @@ def test_default_run():
     bashplot.bashplot(fnames=test_txt, args=args_1)
 
 
-
 @mock.patch("bashplot.bashplot.bashplot")
 def test_customize_run_mock_1(bashplot):
     bashplot.bashplot(fnames=test_txt, args=args_2)
@@ -138,7 +153,6 @@ def test_customize_run_mock_1(bashplot):
 
 def test_customize_run_1():
     bashplot.bashplot(fnames=test_txt, args=args_2)
-
 
 
 @mock.patch("bashplot.bashplot.bashplot")
@@ -151,10 +165,12 @@ def test_customize_run_2():
     bashplot.bashplot(fnames=test_dat, args=args_3)
 
 
-
 def test_customize_run_3():
     bashplot.bashplot(fnames=test_out, args=args_4)
 
+
+def test_customize_run_4():
+    bashplot.bashplot(fnames=test_data_sin, args=args_5)
 
 
 @mock.patch("bashplot.bashplot.command_line_runner")
@@ -165,7 +181,6 @@ def test_command_line_mock(command_line_runner):
 
 def test_command_line_1():
     bashplot.command_line_runner()
-
 
 
 def test_log(capfd):
