@@ -15,6 +15,8 @@ import sys
 
 from pathlib import Path
 from typing import Any
+from typing import Dict
+from typing import Optional
 
 import numpy as np
 import plotille as plt
@@ -22,7 +24,7 @@ import plotille as plt
 from . import __version__
 
 
-def log(msg: str, mode: int = None) -> None:
+def log(msg: str, mode: Optional[int] = None) -> None:
     """Print messages to display.
 
     Parameters
@@ -38,14 +40,14 @@ def log(msg: str, mode: int = None) -> None:
         print(msg)
 
 
-def load_data(fname: str, args: dict) -> np.ndarray:
+def load_data(fname: str, args: Dict[str, Any]) -> np.ndarray:
     """Load data via np.genfromtxt.
 
     Parameters
     ----------
     fname : str
         Filename to load via np.genfromtxt.
-    args : dict
+    args : Dict[str, Any]
         Dictionary of the keywords and values from the parser.
 
     Returns
@@ -150,7 +152,7 @@ def fig_size(width: float, height: float) -> Any:
     return fig
 
 
-def plot(data: np.ndarray, args: dict, label: str) -> None:
+def plot(data: np.ndarray, args: Dict[str, Any], label: str) -> None:
     """Generate the plots as classical or scatter plots.
 
     plot() is generating the classical or scatter plots according to the arguments
@@ -160,7 +162,7 @@ def plot(data: np.ndarray, args: dict, label: str) -> None:
     ----------
     data : float-array
         2D-Numpy-array with `dtype=float`.
-    args : dict
+    args : Dict[str, Any]
         Dictionary of the keywords and values from the parser.
     label : str
         The label of the scatter-plot(s) is the current filename.
@@ -201,7 +203,7 @@ def plot(data: np.ndarray, args: dict, label: str) -> None:
         sys.exit(1)
 
 
-def bashplot(fnames: str, args: dict) -> Any:
+def bashplot(fnames: str, args: Dict[str, Any]) -> Any:
     """bashplot.
 
     bashplot() is plotting each file independently according to the args. For a
@@ -212,7 +214,7 @@ def bashplot(fnames: str, args: dict) -> Any:
     ----------
     fnames : str-list
         List of the filename(s); is always a list even if single value included.
-    args : dict
+    args : Dict[str, Any]
         Dictionary of the keywords and values from the parser.
 
     Returns
@@ -229,17 +231,17 @@ def bashplot(fnames: str, args: dict) -> Any:
         return bashplot(fnames[1:], args)
 
 
-def get_args(opt: dict = None) -> dict:
+def get_args(opt: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """Get the parser arguments from the command line.
 
     Parameters
     ----------
-    opt : dict, optional
+    opt : Dict[str, Any], optional
         Optional Dictionary for modifying the parser arguments; default is None.
 
     Returns
     -------
-    args : dict
+    args : Dict[str, Any]
         Dictionary of the keywords and values from the parser.
     """
     parser = argparse.ArgumentParser(
