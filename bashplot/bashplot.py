@@ -88,10 +88,12 @@ def plot_plot(fig: Any, x: np.ndarray, y: np.ndarray, label: str) -> Any:
         Returns the function itself for a smaller (n-1) float-array (y) until it is an
         1D-array.
     """
-    fig.plot(x, y[:, 0], label=label)
-    if y.shape[1] == 1:
-        return fig
-    return plot_plot(fig, x, y[:, 1:], label=label)
+    if len(y.shape) > 1:
+        for i in range(y.shape[1]):
+            fig.plot(x, y[:, i], label=label)
+    else:
+        fig.plot(x, y, label=label)
+    return fig
 
 
 def plot_scatter(fig, x: np.ndarray, y: np.ndarray, label: str):
@@ -119,10 +121,12 @@ def plot_scatter(fig, x: np.ndarray, y: np.ndarray, label: str):
         Returns the function itself for a smaller (n-1) float-array (y) until it is an
         1D-array.
     """
-    fig.scatter(x, y[:, 0], label=label)
-    if y.shape[1] == 1:
-        return fig
-    return plot_scatter(fig, x, y[:, 1:], label=label)
+    if len(y.shape) > 1:
+        for i in range(y.shape[1]):
+            fig.scatter(x, y[:, i], label=label)
+    else:
+        fig.scatter(x, y, label=label)
+    return fig
 
 
 def fig_size(width: float, height: float) -> Any:

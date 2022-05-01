@@ -127,7 +127,7 @@ def test_default_run_mock(bashplot):
 
 def test_default_run():
     bashplot.bashplot(fnames=test_txt, args=args_1)
-    assert True
+
 
 
 @mock.patch("bashplot.bashplot.bashplot")
@@ -138,7 +138,7 @@ def test_customize_run_mock_1(bashplot):
 
 def test_customize_run_1():
     bashplot.bashplot(fnames=test_txt, args=args_2)
-    assert True
+
 
 
 @mock.patch("bashplot.bashplot.bashplot")
@@ -149,12 +149,12 @@ def test_customize_run_mock_2(bashplot):
 
 def test_customize_run_2():
     bashplot.bashplot(fnames=test_dat, args=args_3)
-    assert True
+
 
 
 def test_customize_run_3():
     bashplot.bashplot(fnames=test_out, args=args_4)
-    assert True
+
 
 
 @mock.patch("bashplot.bashplot.command_line_runner")
@@ -165,7 +165,7 @@ def test_command_line_mock(command_line_runner):
 
 def test_command_line_1():
     bashplot.command_line_runner()
-    assert True
+
 
 
 def test_log(capfd):
