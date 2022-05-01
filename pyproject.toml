@@ -36,7 +36,10 @@ classifiers = [
         { version = "<=1.20", python = "<3.7" },
         { version = "^1.21.6", python = ">=3.7" },
     ]
-    plotille = "=3.8,<5.0"
+    plotille = [
+        { version = "<=3.8", python = "<3.7" },
+        { version = "^4.0.2", python = ">=3.7" },
+    ]
 
     [tool.poetry.dev-dependencies]
     black = "^22.3.0"
