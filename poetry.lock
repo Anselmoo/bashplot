@@ -230,14 +230,25 @@ test = ["appdirs (==1.4.4)", "pytest (>=6)", "pytest-cov (>=2.7)", "pytest-mock 
 
 [[package]]
 name = "plotille"
-version = "3.8.0"
+version = "3.7.2"
+description = "Plot in the terminal using braille dots."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[package.dependencies]
+six = ">=1.12,<2.0"
+
+[[package]]
+name = "plotille"
+version = "4.0.2"
 description = "Plot in the terminal using braille dots."
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 
 [package.dependencies]
-six = ">=1.12,<2.0"
+six = ">=1.16,<2.0"
 
 [[package]]
 name = "pluggy"
@@ -458,7 +469,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
     python-versions = ">=3.6.2,<3.11"
-content-hash = "8105f26c7ffcf2cdeb5c87903b3c0fd67ea651ce27b9cf1d2eafe6e177068c5b"
+content-hash = "346edc2e8641fb4cb3af357088791b1098abe3fd38ed61bf2b79d194694e75f0"
 
 [metadata.files]
 atomicwrites = [
@@ -688,7 +699,8 @@ platformdirs = [
     {file = "platformdirs-2.4.0.tar.gz", hash = "sha256:367a5e80b3d04d2428ffa76d33f124cf11e8fff2acdaa9b43d545f5c7d661ef2"},
 ]
 plotille = [
-    {file = "plotille-3.8.0.tar.gz", hash = "sha256:6bc4e386c5e0684fb1a6fb0854df9465e652912502f45a6b7a4fe4c550de53ec"},
+    {file = "plotille-3.7.2.tar.gz", hash = "sha256:3160ab0330c3c44aa5d4363c60ef8fd2b12f13778998ab499d2c6721dc7c0628"},
+    {file = "plotille-4.0.2.tar.gz", hash = "sha256:12ea212ce561d0d2bc131b16ea5768b2a43d642e0016403c86f0ba4e9f997a3b"},
 ]
 pluggy = [
     {file = "pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
