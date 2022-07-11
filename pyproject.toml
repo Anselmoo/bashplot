@@ -50,7 +50,7 @@ classifiers = [
     coverage = "^6.1.2"
     pytest = "^7.0.0"
     pytest-clarity = "^1.0.1"
-    pytest-sugar = "^0.9.4"
+    pytest-sugar = "^0.9.5"
     pytest-console-scripts = "^1.3.1"
 
 [build-system]
