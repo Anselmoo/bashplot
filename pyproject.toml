@@ -44,7 +44,10 @@ classifiers = [
     [tool.poetry.dev-dependencies]
     black = "^22.3.0"
     isort = "^5.10.1"
-    flake8 = "^4.0.1"
+    flake8 = [
+        { version = "^4.0.1", python = "<3.7" },
+        { version = "^5.0.4", python = ">=3.7" },
+    ]
     pydocstyle = "^6.1.1"
     mypy = "^0.960"
     coverage = "^6.1.2"
