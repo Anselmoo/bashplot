@@ -3,8 +3,8 @@ name = "bashplot"
 version = "1.2.0"
 description = "Instant data plotting from the terminal into the terminal"
 readme = "README.md"
-authors = ["Anselm Hahn <Anselm.Hahn@gmail.com>"]
-maintainers = ["Anselm Hahn <Anselm.Hahn@gmail.com>"]
+authors = ["Anselm Hahn <anselm.hahn@gmail.com>"]
+maintainers = ["Anselm Hahn <anselm.hahn@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/Anselmoo/bashplot"
 homepage = "https://pypi.org/project/bashplot/"
@@ -42,14 +42,14 @@ classifiers = [
     ]
 
     [tool.poetry.dev-dependencies]
-    black = "^22.3.0"
+    black = "^22.8.0"
     isort = "^5.10.1"
     flake8 = [
         { version = "^4.0.1", python = "<3.7" },
         { version = "^5.0.4", python = ">=3.7" },
     ]
     pydocstyle = "^6.1.1"
-    mypy = "^0.960"
+    mypy = "^0.971"
     coverage = "^6.1.2"
     pytest = "^7.0.0"
     pytest-clarity = "^1.0.1"
